@@ -1,0 +1,97 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/test_goto_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_goto_login" />
+
+        <Button
+            android:id="@+id/test_goto_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_goto_tab" />
+
+        <Button
+            android:id="@+id/test_goto_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_goto_fab" />
+
+        <Button
+            android:id="@+id/test_goto_collapse_tool_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_goto_collapse_app_bar" />
+
+        <!--<Button
+            android:id="@+id/test_launch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_launch" />
+
+        <Button
+            android:id="@+id/test_sound_soundpoll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_sound_soundpoll" />
+
+        <Button
+            android:id="@+id/test_sound_mediaplayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_sound_mediaplayer" />
+
+        <Button
+            android:id="@+id/test_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_tab" />
+
+        <Button
+            android:id="@+id/test_sparse_array"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_sparse_array" />
+
+        <Button
+            android:id="@+id/test_sparse_array_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_sparse_array_get" />
+
+        <Button
+            android:id="@+id/test_sparse_array_put"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_sparse_array_put" />
+
+        <Button
+            android:id="@+id/test_filter_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_filter_view" />-->
+    </LinearLayout>
+
+</ScrollView>
