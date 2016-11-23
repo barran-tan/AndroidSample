@@ -23,6 +23,7 @@ public class TestActivity extends AppCompatActivity {
         findViewById(R.id.test_goto_tab).setOnClickListener(listener);
         findViewById(R.id.test_goto_fab).setOnClickListener(listener);
         findViewById(R.id.test_goto_collapse_tool_bar).setOnClickListener(listener);
+        findViewById(R.id.test_swipe_dismiss).setOnClickListener(listener);
     }
 
     class ClickListener implements View.OnClickListener{
@@ -47,6 +48,11 @@ public class TestActivity extends AppCompatActivity {
 
                 case R.id.test_goto_collapse_tool_bar:
                     intent = new Intent(TestActivity.this, CollapsingToolbarInAppBar.class);
+                    startActivity(intent);
+                    break;
+
+                case R.id.test_swipe_dismiss:
+                    intent = new Intent(TestActivity.this, SwipeDismissActivity.class);
                     startActivity(intent);
                     break;
             }

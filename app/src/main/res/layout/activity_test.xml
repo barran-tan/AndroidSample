@@ -37,61 +37,61 @@
             style="@style/DemoBtnTestEntrance"
             android:text="test_goto_collapse_app_bar" />
 
+        <Button
+            android:id="@+id/test_swipe_dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_swipe_dismiss" />
+
         <!--<Button
-            android:id="@+id/test_launch"
+            android:id="@+id/"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/DemoBtnTestEntrance"
-            android:text="test_launch" />
+            android:text="" />
 
         <Button
-            android:id="@+id/test_sound_soundpoll"
+            android:id="@+id/"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/DemoBtnTestEntrance"
-            android:text="test_sound_soundpoll" />
+            android:text="" />
 
         <Button
-            android:id="@+id/test_sound_mediaplayer"
+            android:id="@+id/"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/DemoBtnTestEntrance"
-            android:text="test_sound_mediaplayer" />
+            android:text="" />
 
         <Button
-            android:id="@+id/test_tab"
+            android:id="@+id/"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/DemoBtnTestEntrance"
-            android:text="test_tab" />
+            android:text="" />
 
         <Button
-            android:id="@+id/test_sparse_array"
+            android:id="@+id/"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/DemoBtnTestEntrance"
-            android:text="test_sparse_array" />
+            android:text="" />
 
         <Button
-            android:id="@+id/test_sparse_array_get"
+            android:id="@+id/"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/DemoBtnTestEntrance"
-            android:text="test_sparse_array_get" />
+            android:text="" />
 
         <Button
-            android:id="@+id/test_sparse_array_put"
+            android:id="@+id/"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/DemoBtnTestEntrance"
-            android:text="test_sparse_array_put" />
-
-        <Button
-            android:id="@+id/test_filter_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/DemoBtnTestEntrance"
-            android:text="test_filter_view" />-->
+            android:text="" />-->
     </LinearLayout>
 
 </ScrollView>

@@ -27,6 +27,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".FABInCoordinateLayout" />
         <activity android:name=".CollapsingToolbarInAppBar" />
+        <activity android:name=".SwipeDismissActivity" />
     </application>
 
 </manifest>
