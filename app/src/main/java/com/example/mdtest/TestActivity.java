@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
 /**
@@ -25,6 +24,7 @@ public class TestActivity extends AppCompatActivity {
         findViewById(R.id.test_goto_fab).setOnClickListener(listener);
         findViewById(R.id.test_goto_collapse_tool_bar).setOnClickListener(listener);
         findViewById(R.id.test_swipe_dismiss).setOnClickListener(listener);
+        findViewById(R.id.test_swipe_delete).setOnClickListener(listener);
         findViewById(R.id.test_temp_activity).setOnClickListener(listener);
 
     }
@@ -59,8 +59,13 @@ public class TestActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
 
+                case R.id.test_swipe_delete:
+                    intent = new Intent(TestActivity.this, SwipeDeleteActivity.class);
+                    startActivity(intent);
+                    break;
+
                 case R.id.test_temp_activity:
-                    intent = new Intent(TestActivity.this, TestTempActivity.class);
+                    intent = new Intent(TestActivity.this, TestConstraintLayoutActivity.class);
                     startActivity(intent);
                     break;
             }

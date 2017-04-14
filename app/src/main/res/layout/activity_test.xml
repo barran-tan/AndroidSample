@@ -45,6 +45,13 @@
             android:text="test_swipe_dismiss" />
 
         <Button
+            android:id="@+id/test_swipe_delete"
+            style="@style/DemoBtnTestEntrance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test_swipe_delete" />
+
+        <Button
             android:id="@+id/test_temp_activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
