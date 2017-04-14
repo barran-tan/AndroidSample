@@ -28,6 +28,7 @@
         <activity android:name=".FABInCoordinateLayout" />
         <activity android:name=".CollapsingToolbarInAppBar" />
         <activity android:name=".SwipeDismissActivity" />
+        <activity android:name=".TestTempActivity" />
     </application>
 
 </manifest>
