@@ -29,7 +29,7 @@ public class TabInAppBar extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tab_in_app_bar);
+        setContentView(R.layout.activity_tab_in_app_bar);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -116,6 +116,13 @@ public class TabInAppBar extends AppCompatActivity {
                 return "getPageTitle " + position;
             }
         });
+
+        // viewPager.setAdapter且tabLayout.setupWithViewPager后，可以使用以下代码设置纯icon的tab，但是不能重写getPageTitle
+//        int[] tabDarwableIds = new int[] { R.drawable.bg_tab, R.drawable.bg_tab,
+//                R.drawable.bg_tab };
+//        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+//            tabLayout.getTabAt(i).setIcon(tabDarwableIds[i]);
+//        }
     }
 
     class Holder extends RecyclerView.ViewHolder{
