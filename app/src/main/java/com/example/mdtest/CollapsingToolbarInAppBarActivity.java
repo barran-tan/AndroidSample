@@ -11,11 +11,11 @@ import android.view.View;
  *
  * Created by tanwei on 2016/9/7.
  */
-public class CollapsingToolbarInAppBar extends AppCompatActivity {
+public class CollapsingToolbarInAppBarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.collapsing_toolbar_in_app_bar);
+        setContentView(R.layout.activity_collapsing_toolbar_in_app_bar);
         
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);// 点击无效？

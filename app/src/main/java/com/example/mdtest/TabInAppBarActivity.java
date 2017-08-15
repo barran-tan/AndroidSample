@@ -20,7 +20,7 @@ import java.util.ArrayList;
  *
  * Created by tanwei on 2016/8/18.
  */
-public class TabInAppBar extends AppCompatActivity {
+public class TabInAppBarActivity extends AppCompatActivity {
     
     private TabLayout tabLayout;
     
@@ -70,20 +70,20 @@ public class TabInAppBar extends AppCompatActivity {
             
             @Override
             public Object instantiateItem(ViewGroup container, int position) {
-//                ListView listView = new ListView(TabInAppBar.this);
-//                listView.setAdapter(new ArrayAdapter<>(TabInAppBar.this,
+//                ListView listView = new ListView(TabInAppBarActivity.this);
+//                listView.setAdapter(new ArrayAdapter<>(TabInAppBarActivity.this,
 //                        android.R.layout.simple_list_item_1, android.R.id.text1, list));
 //                container.addView(listView);
 //                return listView;
 
                 // listview目前不能支持Behavior的效果，即滑动listview不能引起Appbar滑动，只能滑动Appbar自己才能有效果
                 // 使用RecyclerView替代
-//                RecyclerView recyclerView = new RecyclerView(TabInAppBar.this);
-//                recyclerView.setLayoutManager(new LinearLayoutManager(TabInAppBar.this));
+//                RecyclerView recyclerView = new RecyclerView(TabInAppBarActivity.this);
+//                recyclerView.setLayoutManager(new LinearLayoutManager(TabInAppBarActivity.this));
 //                recyclerView.setAdapter(new RecyclerView.Adapter() {
 //                    @Override
 //                    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//                        View v = LayoutInflater.from(TabInAppBar.this).inflate(R.layout.item_text, parent, false);
+//                        View v = LayoutInflater.from(TabInAppBarActivity.this).inflate(R.layout.item_text, parent, false);
 //                        return new Holder(v);
 //                    }
 //
@@ -101,7 +101,7 @@ public class TabInAppBar extends AppCompatActivity {
 //                return recyclerView;
 
                 // 换成NestedScrollView替代
-                View view = LayoutInflater.from(TabInAppBar.this).inflate(R.layout.layout_nested_scroll_view, container, false);
+                View view = LayoutInflater.from(TabInAppBarActivity.this).inflate(R.layout.layout_nested_scroll_view, container, false);
                 container.addView(view);
                 return view;
             }

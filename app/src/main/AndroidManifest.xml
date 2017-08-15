@@ -23,13 +23,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TabInAppBar" />
+        <activity android:name=".TabInAppBarActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".FABInCoordinateLayout" />
-        <activity android:name=".CollapsingToolbarInAppBar" />
+        <activity android:name=".FABInCoordinateLayoutActivity" />
+        <activity android:name=".CollapsingToolbarInAppBarActivity" />
         <activity android:name=".SwipeDismissActivity" />
         <activity android:name=".SwipeDeleteActivity" />
         <activity android:name=".TestConstraintLayoutActivity" />
+        <activity android:name=".dialog.DialogActivity" />
+        <activity android:name=".NavigationViewActivity" />
     </application>
 
 </manifest>

@@ -11,7 +11,7 @@ import android.view.View;
  *
  * Created by tanwei on 2016/9/7.
  */
-public class FABInCoordinateLayout extends AppCompatActivity {
+public class FABInCoordinateLayoutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +24,7 @@ public class FABInCoordinateLayout extends AppCompatActivity {
                         .setAction("i know", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-//                                Toast.makeText(FABInCoordinateLayout.this,
+//                                Toast.makeText(FABInCoordinateLayoutActivity.this,
 //                                        "you have reviewed the tip", Toast.LENGTH_SHORT)
 //                                        .show();
                                 finish();

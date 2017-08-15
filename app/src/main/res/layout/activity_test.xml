@@ -52,27 +52,27 @@
             android:text="test_swipe_delete" />
 
         <Button
-            android:id="@+id/test_temp_activity"
+            android:id="@+id/test_constraint_activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/DemoBtnTestEntrance"
-            android:text="temp_activity" />
+            android:text="constraint_activity" />
+
+        <Button
+            android:id="@+id/test_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="test_dialog" />
+
+        <Button
+            android:id="@+id/test_navigation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DemoBtnTestEntrance"
+            android:text="navigation_view" />
 
         <!--<Button
-            android:id="@+id/"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/DemoBtnTestEntrance"
-            android:text="" />
-
-        <Button
-            android:id="@+id/"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/DemoBtnTestEntrance"
-            android:text="" />
-
-        <Button
             android:id="@+id/"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

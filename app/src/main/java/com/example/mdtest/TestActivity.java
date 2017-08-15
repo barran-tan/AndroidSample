@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.mdtest.dialog.DialogActivity;
+
 /**
  * 测试入口界面
  *
@@ -25,7 +27,9 @@ public class TestActivity extends AppCompatActivity {
         findViewById(R.id.test_goto_collapse_tool_bar).setOnClickListener(listener);
         findViewById(R.id.test_swipe_dismiss).setOnClickListener(listener);
         findViewById(R.id.test_swipe_delete).setOnClickListener(listener);
-        findViewById(R.id.test_temp_activity).setOnClickListener(listener);
+        findViewById(R.id.test_constraint_activity).setOnClickListener(listener);
+        findViewById(R.id.test_dialog).setOnClickListener(listener);
+        findViewById(R.id.test_navigation_view).setOnClickListener(listener);
 
     }
 
@@ -40,17 +44,17 @@ public class TestActivity extends AppCompatActivity {
                     break;
 
                 case R.id.test_goto_tab:
-                    intent = new Intent(TestActivity.this, TabInAppBar.class);
+                    intent = new Intent(TestActivity.this, TabInAppBarActivity.class);
                     startActivity(intent);
                     break;
 
                 case R.id.test_goto_fab:
-                    intent = new Intent(TestActivity.this, FABInCoordinateLayout.class);
+                    intent = new Intent(TestActivity.this, FABInCoordinateLayoutActivity.class);
                     startActivity(intent);
                     break;
 
                 case R.id.test_goto_collapse_tool_bar:
-                    intent = new Intent(TestActivity.this, CollapsingToolbarInAppBar.class);
+                    intent = new Intent(TestActivity.this, CollapsingToolbarInAppBarActivity.class);
                     startActivity(intent);
                     break;
 
@@ -64,8 +68,18 @@ public class TestActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
 
-                case R.id.test_temp_activity:
+                case R.id.test_constraint_activity:
                     intent = new Intent(TestActivity.this, TestConstraintLayoutActivity.class);
+                    startActivity(intent);
+                    break;
+
+                case R.id.test_dialog:
+                    intent = new Intent(TestActivity.this, DialogActivity.class);
+                    startActivity(intent);
+                    break;
+
+                case R.id.test_navigation_view:
+                    intent = new Intent(TestActivity.this, NavigationViewActivity.class);
                     startActivity(intent);
                     break;
             }

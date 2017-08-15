@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_content_list"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#445566"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <Button
+        android:id="@+id/dialog_content_list_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add" />
+
+    <Button
+        android:id="@+id/dialog_content_list_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete" />
+
+    <Button
+        android:id="@+id/dialog_content_list_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="detail" />
+
+    <Button
+        android:id="@+id/dialog_content_list_del_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="del_all" />
+
+</LinearLayout>
