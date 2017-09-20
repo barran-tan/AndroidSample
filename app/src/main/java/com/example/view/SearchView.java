@@ -173,7 +173,7 @@ public class SearchView extends View {
                         // 从开始动画转换好搜索动画
                         isOver = false;
                         mCurrentState = State.SEARCHING;
-                        mStartingAnimator.removeAllListeners();
+//                        mStartingAnimator.removeAllListeners();
                         mSearchingAnimator.start();
                         break;
                     case SEARCHING:
@@ -195,7 +195,14 @@ public class SearchView extends View {
                         // 从结束动画转变为无状态
                         mCurrentState = State.NONE;
 
-                        sendEmptyMessageDelayed(0, 3000);
+                        // 继续循环
+                        sendEmptyMessageDelayed(0, defaultDuration);
+                        break;
+
+                    case NONE:
+                        // 继续循环
+                        mCurrentState = State.STARTING;
+                        mStartingAnimator.start();
                         break;
                 }
             }
