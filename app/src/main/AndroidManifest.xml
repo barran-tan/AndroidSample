@@ -30,8 +30,8 @@
         <activity android:name=".SwipeDismissActivity" />
         <activity android:name=".SwipeDeleteActivity" />
         <activity android:name=".TestConstraintLayoutActivity" />
-        <activity android:name=".dialog.DialogActivity" />
         <activity android:name=".NavigationViewActivity" />
+        <activity android:name="com.example.view.TestPathActivity" />
     </application>
 
 </manifest>

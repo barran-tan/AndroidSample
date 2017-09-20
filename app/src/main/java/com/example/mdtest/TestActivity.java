@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.example.mdtest.dialog.DialogActivity;
+import com.example.view.TestPathActivity;
 
 /**
  * 测试入口界面
@@ -28,7 +28,7 @@ public class TestActivity extends AppCompatActivity {
         findViewById(R.id.test_swipe_dismiss).setOnClickListener(listener);
         findViewById(R.id.test_swipe_delete).setOnClickListener(listener);
         findViewById(R.id.test_constraint_activity).setOnClickListener(listener);
-        findViewById(R.id.test_dialog).setOnClickListener(listener);
+        findViewById(R.id.test_path).setOnClickListener(listener);
         findViewById(R.id.test_navigation_view).setOnClickListener(listener);
 
     }
@@ -73,8 +73,8 @@ public class TestActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
 
-                case R.id.test_dialog:
-                    intent = new Intent(TestActivity.this, DialogActivity.class);
+                case R.id.test_path:
+                    intent = new Intent(TestActivity.this, TestPathActivity.class);
                     startActivity(intent);
                     break;
 

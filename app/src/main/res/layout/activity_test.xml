@@ -59,11 +59,11 @@
             android:text="constraint_activity" />
 
         <Button
-            android:id="@+id/test_dialog"
+            android:id="@+id/test_path"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/DemoBtnTestEntrance"
-            android:text="test_dialog" />
+            android:text="test_path" />
 
         <Button
             android:id="@+id/test_navigation_view"
