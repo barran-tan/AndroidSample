@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.html.WebVideoActivity;
 import com.example.view.TestPathActivity;
 
 /**
@@ -30,6 +31,7 @@ public class TestActivity extends AppCompatActivity {
         findViewById(R.id.test_constraint_activity).setOnClickListener(listener);
         findViewById(R.id.test_path).setOnClickListener(listener);
         findViewById(R.id.test_navigation_view).setOnClickListener(listener);
+        findViewById(R.id.test_web_video).setOnClickListener(listener);
 
     }
 
@@ -80,6 +82,11 @@ public class TestActivity extends AppCompatActivity {
 
                 case R.id.test_navigation_view:
                     intent = new Intent(TestActivity.this, NavigationViewActivity.class);
+                    startActivity(intent);
+                    break;
+
+                case R.id.test_web_video:
+                    intent = new Intent(TestActivity.this, WebVideoActivity.class);
                     startActivity(intent);
                     break;
             }
