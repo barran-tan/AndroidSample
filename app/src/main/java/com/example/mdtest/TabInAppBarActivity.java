@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -49,7 +50,18 @@ public class TabInAppBarActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("tab2"));
         tabLayout.addTab(tabLayout.newTab().setText("tab3"));
     }
-    
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     private void initViewPager() {
         
         final ArrayList<String> list = new ArrayList<>(30);

@@ -2,6 +2,7 @@ package com.example.view;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -69,7 +70,7 @@ public class SearchView extends View {
     private State mCurrentState = State.NONE;
     
     // 放大镜与外部圆环
-    private Path path_srarch;
+    private Path path_search;
     private Path path_circle;
     
     // 测量Path 并截取部分的工具
@@ -108,14 +109,14 @@ public class SearchView extends View {
     }
     
     private void initPath() {
-        path_srarch = new Path();
+        path_search = new Path();
         path_circle = new Path();
         
         mMeasure = new PathMeasure();
         
         // 注意,不要到360度,否则内部会自动优化,测量不能取到需要的数值
         RectF oval1 = new RectF(-50, -50, 50, 50); // 放大镜圆环
-        path_srarch.addArc(oval1, 45, 359.9f);
+        path_search.addArc(oval1, 45, 359.9f);
         
         RectF oval2 = new RectF(-100, -100, 100, 100); // 外部圆环
         path_circle.addArc(oval2, 45, -359.9f);
@@ -125,7 +126,7 @@ public class SearchView extends View {
         mMeasure.setPath(path_circle, false); // 放大镜把手的位置
         mMeasure.getPosTan(0, pos, null);
         
-        path_srarch.lineTo(pos[0], pos[1]); // 放大镜把手
+        path_search.lineTo(pos[0], pos[1]); // 放大镜把手
         
         Log.i("TAG", "pos=" + pos[0] + ":" + pos[1]);
     }
@@ -162,7 +163,8 @@ public class SearchView extends View {
             }
         };
     }
-    
+
+    @SuppressLint("HandlerLeak")
     private void initHandler() {
         mAnimatorHandler = new Handler() {
             @Override
@@ -247,10 +249,10 @@ public class SearchView extends View {
         
         switch (mCurrentState) {
             case NONE:
-                canvas.drawPath(path_srarch, mPaint);
+                canvas.drawPath(path_search, mPaint);
                 break;
             case STARTING:
-                mMeasure.setPath(path_srarch, false);
+                mMeasure.setPath(path_search, false);
                 Path dst = new Path();
                 mMeasure.getSegment(mMeasure.getLength() * mAnimatorValue,
                         mMeasure.getLength(), dst, true);
@@ -266,7 +268,7 @@ public class SearchView extends View {
                 canvas.drawPath(dst2, mPaint);
                 break;
             case ENDING:
-                mMeasure.setPath(path_srarch, false);
+                mMeasure.setPath(path_search, false);
                 Path dst3 = new Path();
                 mMeasure.getSegment(mMeasure.getLength() * mAnimatorValue,
                         mMeasure.getLength(), dst3, true);

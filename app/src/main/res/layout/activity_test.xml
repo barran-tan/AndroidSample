@@ -53,52 +53,45 @@
 
         <Button
             android:id="@+id/test_constraint_activity"
+            style="@style/DemoBtnTestEntrance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/DemoBtnTestEntrance"
             android:text="constraint_activity" />
 
         <Button
             android:id="@+id/test_path"
+            style="@style/DemoBtnTestEntrance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/DemoBtnTestEntrance"
             android:text="test_path" />
 
         <Button
             android:id="@+id/test_navigation_view"
+            style="@style/DemoBtnTestEntrance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/DemoBtnTestEntrance"
             android:text="navigation_view" />
 
         <Button
             android:id="@+id/test_web_video"
+            style="@style/DemoBtnTestEntrance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/DemoBtnTestEntrance"
             android:text="web_video" />
 
-        <!--<Button
-            android:id="@+id/"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/DemoBtnTestEntrance"
-            android:text="" />
-
         <Button
-            android:id="@+id/"
+            android:id="@+id/test_offset"
+            style="@style/DemoBtnTestEntrance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/DemoBtnTestEntrance"
-            android:text="" />
+            android:text="test_offset" />
 
-        <Button
-            android:id="@+id/"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/DemoBtnTestEntrance"
-            android:text="" />-->
+        <!-- <Button
+             android:id="@+id/"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             style="@style/DemoBtnTestEntrance"
+             android:text="" />-->
     </LinearLayout>
 
 </ScrollView>

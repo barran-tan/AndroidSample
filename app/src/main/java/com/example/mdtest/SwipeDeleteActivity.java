@@ -209,7 +209,7 @@ public class SwipeDeleteActivity extends Activity {
         void onMove(int fromPosition, int toPosition);
     }
     
-    static class Adapter extends RecyclerView.Adapter implements ItemTouchHelperCallback {
+    static class Adapter extends RecyclerView.Adapter<Holder> implements ItemTouchHelperCallback {
         
         private List<String> list;
         
@@ -221,7 +221,7 @@ public class SwipeDeleteActivity extends Activity {
         }
         
         @Override
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,
+        public Holder onCreateViewHolder(ViewGroup parent,
                 int viewType) {
             TextView tv = new TextView(parent.getContext());
             tv.setPadding(0, 30, 0, 30);
@@ -229,8 +229,8 @@ public class SwipeDeleteActivity extends Activity {
         }
         
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-            ((Holder) holder).setContent(list.get(position));
+        public void onBindViewHolder(Holder holder, int position) {
+            holder.setContent(list.get(position));
         }
         
         @Override
