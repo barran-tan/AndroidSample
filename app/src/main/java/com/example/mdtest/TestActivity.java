@@ -34,7 +34,7 @@ public class TestActivity extends AppCompatActivity {
         findViewById(R.id.test_navigation_view).setOnClickListener(listener);
         findViewById(R.id.test_web_video).setOnClickListener(listener);
         findViewById(R.id.test_offset).setOnClickListener(listener);
-        
+
     }
     
     class ClickListener implements View.OnClickListener {

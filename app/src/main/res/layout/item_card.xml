@@ -3,15 +3,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
+        android:id="@+id/item_card_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="item" />
 
     <TextView
+        android:id="@+id/item_card_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/card_string" />

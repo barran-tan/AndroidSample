@@ -7,11 +7,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="button 1" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:onClick="offset"
         android:text="offset" />
 
@@ -24,7 +19,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="scroll"
-        android:text="scroll" />
+        android:onClick="scrollBy"
+        android:text="scrollBy" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="scrollTo"
+        android:text="scrollTo" />
 
 </LinearLayout>

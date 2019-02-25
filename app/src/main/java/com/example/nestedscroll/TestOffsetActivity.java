@@ -20,7 +20,11 @@ public class TestOffsetActivity extends AppCompatActivity {
         
         setContentView(R.layout.activity_test_offset);
     }
-    
+
+    public void scrollBy(View v) {
+        v.scrollBy(20, -20);
+    }
+
     public void offset(View v) {
         offsetView(v, 20, -20);
     }
@@ -38,12 +42,7 @@ public class TestOffsetActivity extends AppCompatActivity {
         v.layout(v.getLeft() + x, v.getTop() + y, v.getRight() + x, v.getBottom() + y);
     }
     
-    public void scroll(View v) {
-        scrollView(v, 20, -20);
-    }
-    
-    private void scrollView(View v, int x, int y) {
-         v.scrollTo(v.getScrollX() - x, v.getScrollY() - y);
-//        v.scrollBy(-x, -y);
+    public void scrollTo(View v) {
+        v.scrollTo(20, -20);
     }
 }
