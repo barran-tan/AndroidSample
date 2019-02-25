@@ -40,6 +40,7 @@
             android:screenOrientation="portrait" />
 
         <activity android:name="com.example.nestedscroll.TestOffsetActivity" />
+        <activity android:name=".TestConstraintLayout2Activity" />
     </application>
 
 </manifest>

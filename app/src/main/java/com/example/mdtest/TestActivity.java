@@ -34,7 +34,8 @@ public class TestActivity extends AppCompatActivity {
         findViewById(R.id.test_navigation_view).setOnClickListener(listener);
         findViewById(R.id.test_web_video).setOnClickListener(listener);
         findViewById(R.id.test_offset).setOnClickListener(listener);
-
+        findViewById(R.id.test_constraint_1_1).setOnClickListener(listener);
+        
     }
     
     class ClickListener implements View.OnClickListener {
@@ -97,6 +98,12 @@ public class TestActivity extends AppCompatActivity {
                 
                 case R.id.test_offset:
                     intent = new Intent(TestActivity.this, TestOffsetActivity.class);
+                    startActivity(intent);
+                    break;
+                
+                case R.id.test_constraint_1_1:
+                    intent = new Intent(TestActivity.this,
+                            TestConstraintLayout2Activity.class);
                     startActivity(intent);
                     break;
             }
