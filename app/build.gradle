@@ -1,19 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 26
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.example.mdsample"
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion 21
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
 
-        jackOptions{
-            enabled true
-        }
     }
     buildTypes {
         release {
@@ -28,10 +25,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
-    compile 'com.android.support.constraint:constraint-layout:1.1.3'
-    compile 'joda-time:joda-time:2.9.9'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support:design:27.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'joda-time:joda-time:2.9.9'
 }

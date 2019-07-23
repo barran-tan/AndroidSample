@@ -5,31 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="200dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="600dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="300dp" />
+
     <TextView
         android:id="@+id/text1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorAccent"
         android:text="9111111111119"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="h,0.3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="2222222"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1"
-        app:layout_goneMarginLeft="20dp"
-        app:layout_goneMarginTop="50dp" />
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@+id/guide_bottom"
+        app:layout_constraintDimensionRatio="w,0.6"
+        app:layout_constraintLeft_toLeftOf="@+id/guide_left"
+        app:layout_constraintRight_toRightOf="@+id/guide_right"
+        app:layout_constraintTop_toTopOf="@+id/guide_top" />
 
 
 </android.support.constraint.ConstraintLayout>
