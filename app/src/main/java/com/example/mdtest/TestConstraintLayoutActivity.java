@@ -2,7 +2,7 @@ package com.example.mdtest;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 /**
  * Created by tanwei on 2017/3/6.
