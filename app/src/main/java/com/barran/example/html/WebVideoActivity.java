@@ -1,4 +1,4 @@
-package com.example.html;
+package com.barran.example.html;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -16,7 +16,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 
-import com.example.mdtest.R;
+import com.barran.example.mdtest.R;
 
 /**
  * fullscreen video

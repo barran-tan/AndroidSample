@@ -1,4 +1,4 @@
-package com.example.mdtest;
+package com.barran.example;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
-import com.example.html.WebVideoActivity;
-import com.example.nestedscroll.TestOffsetActivity;
-import com.example.view.TestPathActivity;
+import com.barran.example.constraint.TestConstraintLayout2Activity;
+import com.barran.example.constraint.TestConstraintLayoutActivity;
+import com.barran.example.html.WebVideoActivity;
+import com.barran.example.mdtest.CollapsingToolbarInAppBarActivity;
+import com.barran.example.mdtest.FABInCoordinateLayoutActivity;
+import com.barran.example.mdtest.NavigationViewActivity;
+import com.barran.example.mdtest.R;
+import com.barran.example.mdtest.SwipeDeleteActivity;
+import com.barran.example.mdtest.SwipeDismissActivity;
+import com.barran.example.mdtest.TabInAppBarActivity;
+import com.barran.example.nestedscroll.TestOffsetActivity;
+import com.barran.example.view.TestPathActivity;
 
 /**
  * 测试入口界面
@@ -20,7 +29,7 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_main);
         
         ClickListener listener = new ClickListener();
         findViewById(R.id.test_goto_login).setOnClickListener(listener);

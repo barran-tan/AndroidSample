@@ -1,4 +1,4 @@
-package com.example.mdtest;
+package com.barran.example.mdtest;
 
 import org.junit.Test;
 

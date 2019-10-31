@@ -1,4 +1,4 @@
-package com.example.view;
+package com.barran.example.view;
 
 import android.app.Activity;
 import android.os.Bundle;

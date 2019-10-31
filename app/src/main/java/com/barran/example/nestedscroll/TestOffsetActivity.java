@@ -1,11 +1,11 @@
-package com.example.nestedscroll;
+package com.barran.example.nestedscroll;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
-import com.example.mdtest.R;
+import com.barran.example.mdtest.R;
 
 /**
  * view的移动

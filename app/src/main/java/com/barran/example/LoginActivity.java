@@ -1,4 +1,4 @@
-package com.example.mdtest;
+package com.barran.example;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -6,6 +6,9 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import androidx.annotation.NonNull;
+
+import com.barran.example.mdtest.R;
+import com.barran.example.mdtest.TabInAppBarActivity;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;

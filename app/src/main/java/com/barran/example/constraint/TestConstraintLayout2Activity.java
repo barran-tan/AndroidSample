@@ -1,7 +1,9 @@
-package com.example.mdtest;
+package com.barran.example.constraint;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.barran.example.mdtest.R;
 
 /**
  * 测试ConstraintLayout 1.1新增特性

@@ -1,8 +1,6 @@
-package com.example.mdtest;
+package com.barran.example.mdtest;
 
-import org.joda.time.Chronology;
 import org.joda.time.DateTime;
-import org.joda.time.DateTimeField;
 import org.joda.time.DateTimeFieldType;
 import org.joda.time.Duration;
 import org.joda.time.Instant;
@@ -10,8 +8,6 @@ import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 import org.joda.time.LocalTime;
 import org.joda.time.Period;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.DateTimePrinter;
 import org.junit.Test;
 
 /**
