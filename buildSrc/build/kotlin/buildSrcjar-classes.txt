@@ -1,0 +1,1 @@
+F:\github\AndroidSample\buildSrc\build\classes\kotlin\main\Libs.class;F:\github\AndroidSample\buildSrc\build\classes\kotlin\main\Versions.class
