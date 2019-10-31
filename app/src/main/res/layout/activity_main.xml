@@ -10,13 +10,6 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/test_goto_login"
-            style="@style/DemoBtnTestEntrance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="test_goto_login" />
-
-        <Button
             android:id="@+id/test_goto_tab"
             style="@style/DemoBtnTestEntrance"
             android:layout_width="wrap_content"

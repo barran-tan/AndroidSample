@@ -25,7 +25,6 @@
         </activity>
 
         <activity android:name=".TabInAppBarActivity" />
-        <activity android:name="com.barran.example.LoginActivity" />
         <activity android:name=".FABInCoordinateLayoutActivity" />
         <activity android:name=".CollapsingToolbarInAppBarActivity" />
         <activity android:name=".SwipeDismissActivity" />
