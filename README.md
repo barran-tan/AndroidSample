@@ -2,4 +2,10 @@
 
 android新内容练习
 
-> 参考链接：http://blog.csdn.net/xyz_lmn/article/details/48055919
+- design库
+- androidx迁移
+- arch
+- kotlin
+- 仿写的自定义view
+- kotlin-dsl
+- aab
