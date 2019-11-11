@@ -22,6 +22,7 @@
         android:id="@+id/temp_text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="10dp"
         android:text="text2"
         app:layout_constraintLeft_toRightOf="@+id/temp_text1"
@@ -33,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:text="text3"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/temp_text2"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -90,6 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="text8 longlonglong"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:visibility="visible"
         app:layout_constraintCircle="@id/temp_text7"
         app:layout_constraintCircleAngle="180"
@@ -101,7 +105,7 @@
         android:layout_height="wrap_content"
         app:barrierAllowsGoneWidgets="true"
         app:barrierDirection="right"
-        app:constraint_referenced_ids="temp_text7, temp_text8" />
+        app:constraint_referenced_ids="temp_text7,temp_text8" />
 
     <TextView
         android:id="@+id/temp_text9"
@@ -126,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible"
-        app:constraint_referenced_ids="temp_text7, temp_text8" />
+        app:constraint_referenced_ids="temp_text7,temp_text8" />
 
 
     <!-- Placeholder -->

@@ -27,10 +27,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    lintOptions {
+        disable("IconDuplicatesConfig", "IconDuplicates", "GifUsage", "IconColors", "IconDensities", "IconDipSize", "IconExpectedSize", "IconExtension", "IconLauncherShape", "IconLocation", "IconMissingDensityFolder", "IconMixedNinePatch", "IconNoDpi", "NotificationIconCompatibility", "ConvertToWebp")
+    }
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     testImplementation("junit:junit:4.12")
     implementation(Libs.appcompat)
     implementation(Libs.material)
