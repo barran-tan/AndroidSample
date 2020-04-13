@@ -13,7 +13,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             style="@style/ToolbarStyle"
-            app:layout_scrollFlags="scroll|enterAlways"
+            app:layout_scrollFlags="scroll"
             app:navigationIcon="@drawable/ic_top_back"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="20dp"
-            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            app:layout_scrollFlags="scroll"
             app:tabIndicatorColor="@color/green"
             app:tabMode="fixed"
             app:tabSelectedTextColor="@color/white_light"
