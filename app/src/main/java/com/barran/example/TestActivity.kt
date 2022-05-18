@@ -2,19 +2,14 @@ package com.barran.example
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
-
+import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import com.barran.example.constraint.TestConstraintLayout2Activity
 import com.barran.example.constraint.TestConstraintLayoutActivity
+import com.barran.example.hardware.HardwareTestAct
 import com.barran.example.html.WebVideoActivity
-import com.barran.example.mdtest.CollapsingToolbarInAppBarActivity
-import com.barran.example.mdtest.FABInCoordinateLayoutActivity
-import com.barran.example.mdtest.NavigationViewActivity
-import com.barran.example.mdtest.R
-import com.barran.example.mdtest.SwipeDeleteActivity
-import com.barran.example.mdtest.SwipeDismissActivity
-import com.barran.example.mdtest.TabInAppBarActivity
+import com.barran.example.mdtest.*
 import com.barran.example.nestedscroll.TestOffsetActivity
 import com.barran.example.view.TestPathActivity
 
@@ -41,7 +36,9 @@ class TestActivity : AppCompatActivity() {
         findViewById<View>(R.id.test_web_video).setOnClickListener(listener)
         findViewById<View>(R.id.test_offset).setOnClickListener(listener)
         findViewById<View>(R.id.test_constraint_1_1).setOnClickListener(listener)
+        findViewById<View>(R.id.test_hardware_accelerated).setOnClickListener(listener)
 
+        window.setFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED)
     }
 
     internal inner class ClickListener : View.OnClickListener {
@@ -105,6 +102,15 @@ class TestActivity : AppCompatActivity() {
                     intent = Intent(this@TestActivity,
                             TestConstraintLayout2Activity::class.java)
                     startActivity(intent)
+                }
+
+                R.id.test_hardware_accelerated -> {
+                    startActivity(
+                        Intent(
+                            this@TestActivity,
+                            HardwareTestAct::class.java
+                        )
+                    )
                 }
             }
         }

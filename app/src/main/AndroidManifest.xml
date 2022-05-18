@@ -40,6 +40,9 @@
 
         <activity android:name="com.barran.example.nestedscroll.TestOffsetActivity" />
         <activity android:name="com.barran.example.constraint.TestConstraintLayout2Activity" />
+        <activity
+            android:name="com.barran.example.hardware.HardwareTestAct"
+            android:hardwareAccelerated="false" />
     </application>
 
 </manifest>

@@ -31,6 +31,10 @@ android {
     lintOptions {
         disable("IconDuplicatesConfig", "IconDuplicates", "GifUsage", "IconColors", "IconDensities", "IconDipSize", "IconExpectedSize", "IconExtension", "IconLauncherShape", "IconLocation", "IconMissingDensityFolder", "IconMixedNinePatch", "IconNoDpi", "NotificationIconCompatibility", "ConvertToWebp")
     }
+
+    viewBinding {
+        isEnabled = true
+    }
 }
 
 dependencies {

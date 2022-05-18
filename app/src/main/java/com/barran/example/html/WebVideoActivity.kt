@@ -35,7 +35,7 @@ class WebVideoActivity : AppCompatActivity() {
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
         setContentView(R.layout.activity_web_video)
-        webView = findViewById(R.id.webview)
+        webView = findViewById(R.id.web_view)
 
         webUrl = "https://live.bilibili.com/5269?spm_id_from=333.334.bili_live.12"
 
