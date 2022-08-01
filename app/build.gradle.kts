@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.mdsample"
-        minSdkVersion(21)
-        targetSdkVersion(26)
+        minSdkVersion(23)
+        targetSdkVersion(28)
         versionCode = 1
         versionName = "1.0"
     }
@@ -47,4 +47,5 @@ dependencies {
     implementation(Libs.paging)
     implementation(Libs.core_ktx)
     implementation(Libs.kotlin_stdlib_jdk7)
+    implementation("com.google.code.gson:gson:2.8.9")
 }
