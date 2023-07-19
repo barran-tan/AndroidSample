@@ -15,7 +15,6 @@ import com.barran.example.mdtest.databinding.ActHardwareTestBinding
 /**
  * description
  *
- * create by tanwei@bigo.sg
  * on 2022/5/17
  */
 class HardwareTestAct : AppCompatActivity() {

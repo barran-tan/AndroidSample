@@ -27,7 +27,7 @@ class WebVideoActivity : AppCompatActivity() {
 
     private var webView: WebView? = null
 
-    private var webUrl: String? = null
+    private var webUrl = "https://live.bilibili.com/5269?spm_id_from=333.334.bili_live.12"
     private var customView: View? = null
     private var fullscreenContainer: FrameLayout? = null
     private var customViewCallback: WebChromeClient.CustomViewCallback? = null
@@ -36,8 +36,6 @@ class WebVideoActivity : AppCompatActivity() {
         super.onCreate(bundle)
         setContentView(R.layout.activity_web_video)
         webView = findViewById(R.id.web_view)
-
-        webUrl = "https://live.bilibili.com/5269?spm_id_from=333.334.bili_live.12"
 
         initWebView()
     }

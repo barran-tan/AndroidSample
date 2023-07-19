@@ -93,6 +93,13 @@
             android:layout_height="wrap_content"
             android:text="test_hardware_accelerated" />
 
+        <Button
+            android:id="@+id/test_other"
+            style="@style/DemoBtnTestEntrance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test_other" />
+
     </LinearLayout>
 
 </ScrollView>

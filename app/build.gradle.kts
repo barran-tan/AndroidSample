@@ -2,16 +2,17 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("kotlin-android-extensions")
+    id("test.thread")
 }
 
 android {
-    compileSdkVersion(28)
-    buildToolsVersion("28.0.3")
+    compileSdk = 31
+    buildToolsVersion = "33.0.2"
 
     defaultConfig {
         applicationId = "com.example.mdsample"
-        minSdkVersion(23)
-        targetSdkVersion(28)
+        minSdk = 23
+        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
     }
@@ -28,9 +29,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    lintOptions {
-        disable("IconDuplicatesConfig", "IconDuplicates", "GifUsage", "IconColors", "IconDensities", "IconDipSize", "IconExpectedSize", "IconExtension", "IconLauncherShape", "IconLocation", "IconMissingDensityFolder", "IconMixedNinePatch", "IconNoDpi", "NotificationIconCompatibility", "ConvertToWebp")
-    }
+//    lintOptions {
+//        disable("IconDuplicatesConfig", "IconDuplicates", "GifUsage", "IconColors", "IconDensities", "IconDipSize", "IconExpectedSize", "IconExtension", "IconLauncherShape", "IconLocation", "IconMissingDensityFolder", "IconMixedNinePatch", "IconNoDpi", "NotificationIconCompatibility", "ConvertToWebp")
+//    }
 
     viewBinding {
         isEnabled = true
@@ -48,4 +49,5 @@ dependencies {
     implementation(Libs.core_ktx)
     implementation(Libs.kotlin_stdlib_jdk7)
     implementation("com.google.code.gson:gson:2.8.9")
+//    implementation("com.appsflyer:af-android-sdk:6.5.4")
 }

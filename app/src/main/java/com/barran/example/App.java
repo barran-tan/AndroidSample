@@ -7,7 +7,6 @@ import android.util.Log;
 /**
  * description
  * <p>
- * create by tanwei@bigo.sg
  * on 2022/5/31
  */
 public class App extends Application {

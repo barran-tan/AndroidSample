@@ -8,7 +8,6 @@ import androidx.appcompat.widget.AppCompatImageView
 
 /**
  *  ha test
- * create by tanwei@bigo.sg
  * on 2022/5/17
  */
 class HAImageView @JvmOverloads constructor(
