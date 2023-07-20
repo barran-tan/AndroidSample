@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/act_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_photo_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/guide_hor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_hor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <Button
+        android:id="@+id/btn_pick_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="pick one"
+        app:layout_constraintEnd_toStartOf="@+id/btn_pick_more"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guide_hor" />
+
+    <Button
+        android:id="@+id/btn_pick_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pick more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_pick_one"
+        app:layout_constraintTop_toTopOf="@+id/btn_pick_one" />
+
+    <Spinner
+        android:id="@+id/spinner_photo_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_pick_more"
+        app:layout_constraintStart_toEndOf="@+id/btn_pick_more"
+        app:layout_constraintTop_toTopOf="@+id/btn_pick_more" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
