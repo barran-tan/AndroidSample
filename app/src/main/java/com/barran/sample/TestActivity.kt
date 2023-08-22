@@ -8,6 +8,7 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.PermissionChecker
+import com.barran.sample.compose.TestCompostActivity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
 import com.barran.sample.constraint.TestConstraintLayoutActivity
 import com.barran.sample.hardware.HardwareTestAct
@@ -17,7 +18,6 @@ import com.barran.sample.nestedscroll.TestOffsetActivity
 import com.barran.sample.other.OtherTestAct
 import com.barran.sample.photopicker.PhotoPickerActivity
 import com.barran.sample.view.TestPathActivity
-import java.util.*
 
 
 /**
@@ -47,6 +47,7 @@ class TestActivity : AppCompatActivity() {
         findViewById<View>(R.id.test_hardware_accelerated).setOnClickListener(listener)
         findViewById<View>(R.id.test_other).setOnClickListener(listener)
         findViewById<View>(R.id.test_photo_picker).setOnClickListener(listener)
+        findViewById<View>(R.id.test_compose).setOnClickListener(listener)
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
@@ -177,6 +178,15 @@ class TestActivity : AppCompatActivity() {
                         Intent(
                             this@TestActivity,
                             PhotoPickerActivity::class.java
+                        )
+                    )
+                }
+
+                R.id.test_compose -> {
+                    startActivity(
+                        Intent(
+                            this@TestActivity,
+                            TestCompostActivity::class.java
                         )
                     )
                 }
