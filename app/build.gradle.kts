@@ -123,5 +123,7 @@ dependencies {
     // Optional - Integration with RxJava
 //    implementation("androidx.compose.runtime:runtime-rxjava2")
 
+    implementation(Libs.compose_navi)
+
     // endregion
 }

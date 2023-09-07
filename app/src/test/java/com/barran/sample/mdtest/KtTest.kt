@@ -45,4 +45,23 @@ class KtTest {
         println("test end")
     }
 
+    @Test
+    fun int32To64(){
+        val intValue = -1381797423
+        val hex = Integer.toHexString(intValue)
+        println("hex of $intValue is $hex")
+        val longValue = java.lang.Long.parseLong(hex,16)
+        println("parse long from $hex to $longValue")
+
+        println("parse long to Int ${longValue.toInt()}")
+        println("parse long to UInt ${longValue.toUInt()}")
+        println("parse int to UInt ${intValue.toUInt()}")
+        println("parse int to java Long ${Integer.toUnsignedLong(intValue)}")
+    }
+
+    @Test
+    fun int2UInt(){
+        val intValue = 0
+        println("parse int to UInt ${intValue.toUInt()}")
+    }
 }

@@ -24,4 +24,6 @@ object Libs {
     const val android_activity = "androidx.activity:activity:1.6.1"
 
     const val android_fragment = "androidx.fragment:fragment-ktx:1.5.7"
+
+    const val compose_navi = "androidx.navigation:navigation-compose:2.5.3"
 }
