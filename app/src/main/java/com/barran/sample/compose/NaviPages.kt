@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.barran.sample.compose.pages.AnimPage
+import com.barran.sample.compose.pages.AnimPage2
 import com.barran.sample.compose.pages.Entry
 import com.barran.sample.compose.pages.GesturePage
 import com.barran.sample.compose.pages.MainPage
@@ -17,6 +18,7 @@ class NaviPages {
         const val NAVI_PAGE_MAIN = "main"
         const val NAVI_PAGE_GESTURE = "gesture"
         const val NAVI_PAGE_ANIM = "anim"
+        const val NAVI_PAGE_ANIM2 = "anim2"
     }
 
     lateinit var navController : NavHostController
@@ -29,6 +31,9 @@ class NaviPages {
         })
         entryList.add(Entry("anim test") {
             navController.navigate(NAVI_PAGE_ANIM)
+        })
+        entryList.add(Entry("anim test 2") {
+            navController.navigate(NAVI_PAGE_ANIM2)
         })
     }
 
@@ -46,6 +51,9 @@ class NaviPages {
             }
             composable(NAVI_PAGE_ANIM) {
                 AnimPage()
+            }
+            composable(NAVI_PAGE_ANIM2) {
+                AnimPage2()
             }
         }
     }
