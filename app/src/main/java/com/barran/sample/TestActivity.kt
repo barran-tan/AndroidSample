@@ -1,7 +1,14 @@
 package com.barran.sample
 
 import android.Manifest
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -30,7 +37,7 @@ class TestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        Log.v(App.TAG, "TestActivity onCreate")
         val listener = ClickListener()
         val view = findViewById<View>(R.id.test_goto_tab)
         view.setOnClickListener(listener)
@@ -56,6 +63,8 @@ class TestActivity : AppCompatActivity() {
 
 //        TestUnit.test()
         //        testPermission()
+
+        setupNotifyChannel()
     }
 
     private fun testPermission(){
@@ -73,6 +82,37 @@ class TestActivity : AppCompatActivity() {
         }
     }
 
+    private fun setupNotifyChannel() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            return
+        }
+        val context = applicationContext
+        val manager = context.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        val channelImportance: Int =
+            NotificationManager.IMPORTANCE_HIGH
+        val liveChannel = NotificationChannel(
+            "message",
+            "Message", channelImportance
+        )
+        liveChannel.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
+        liveChannel.setShowBadge(true)
+        manager.createNotificationChannel(liveChannel)
+        val chatChannel = NotificationChannel(
+            "event",
+            "Event", channelImportance
+        )
+        chatChannel.enableLights(true)
+        chatChannel.lightColor = Color.GREEN
+        chatChannel.enableVibration(true)
+        chatChannel.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
+        chatChannel.setShowBadge(true)
+        manager.createNotificationChannel(chatChannel)
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+            requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 2222)
+        }
+    }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -80,6 +120,14 @@ class TestActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 1111) {
+            val size = permissions.size
+            for (i in 0 until size) {
+                Log.v(
+                    "permission",
+                    "req ${permissions[i]} result ${grantResults[i]}"
+                )
+            }
+        } else if (requestCode == 2222) {
             val size = permissions.size
             for (i in 0 until size) {
                 Log.v(

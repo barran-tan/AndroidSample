@@ -11,7 +11,7 @@ import android.util.Log;
  */
 public class App extends Application {
 
-    private static final String TAG = "test_app";
+    public static final String TAG = "test_app";
 
     public static Context context;
 
