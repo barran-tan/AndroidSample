@@ -2,7 +2,9 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("kotlin-android-extensions")
-    id("test.thread")
+//    id("test.thread")
+    id("test.totransform")
+//    id("test.kttransform")
 }
 
 android {
@@ -39,7 +41,7 @@ android {
 //    }
 
     viewBinding {
-        isEnabled = true
+        enable = true
     }
 
     buildFeatures {
