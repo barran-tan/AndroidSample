@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.barran.androidsample"
-        minSdk = 23
+        minSdk = 24
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -79,6 +79,8 @@ dependencies {
         }
     }
 
+    implementation(project(":nativelib"))
+
     // 测试new Thread插件
 //    implementation("com.appsflyer:af-android-sdk:6.5.4")
 
@@ -128,4 +130,6 @@ dependencies {
     implementation(Libs.compose_navi)
 
     // endregion
+
+    implementation("com.github.tiann:FreeReflection:3.1.0")
 }

@@ -4,6 +4,10 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.HashMap;
+
+import me.weishu.reflection.Reflection;
+
 /**
  * description
  * <p>
@@ -18,7 +22,8 @@ public class App extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        Log.v(TAG, "attachBaseContext");
+        int unseal = Reflection.unseal(base);
+        Log.v(TAG, "attachBaseContext reflect result " + unseal);
     }
 
     @Override

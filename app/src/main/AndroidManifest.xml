@@ -51,6 +51,7 @@
         <activity android:name="com.barran.sample.photopicker.PhotoPickerActivity"/>
 
         <activity android:name=".compose.TestCompostActivity"/>
+        <activity android:name=".jni.TestJniActivity"/>
     </application>
 
 </manifest>

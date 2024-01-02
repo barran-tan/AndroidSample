@@ -8,6 +8,10 @@ class NativeLib {
      */
     external fun stringFromJNI(): String
 
+    external fun checkClassLoaded(pointer: Int, className: String): Boolean
+
+    external fun dynamicNativeFunc(): String
+
 //    external fun test2(): String
 
     companion object {
