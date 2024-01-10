@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.tasks.factory.dependsOn
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -51,6 +53,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.compose_compiler_extension
     }
+    dynamicFeatures.add(":dynamicfeature")
 }
 
 dependencies {
@@ -80,6 +83,7 @@ dependencies {
     }
 
     implementation(project(":nativelib"))
+    implementation(project(":mylibrary"))
 
     // 测试new Thread插件
 //    implementation("com.appsflyer:af-android-sdk:6.5.4")
