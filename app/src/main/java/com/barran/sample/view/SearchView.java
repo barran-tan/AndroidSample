@@ -11,6 +11,7 @@ import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.graphics.RectF;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -62,7 +63,7 @@ public class SearchView extends View {
     }
     
     // 这个视图拥有的状态
-    public static enum State {
+    public enum State {
         NONE, STARTING, SEARCHING, ENDING
     }
     
@@ -166,7 +167,7 @@ public class SearchView extends View {
 
     @SuppressLint("HandlerLeak")
     private void initHandler() {
-        mAnimatorHandler = new Handler() {
+        mAnimatorHandler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
