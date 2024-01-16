@@ -138,7 +138,7 @@ dependencies {
     implementation("com.github.tiann:FreeReflection:3.1.0")
 }
 
-class CustomTask : DefaultTask() {
+open class CustomTask : DefaultTask() {
     @TaskAction
     fun action() {
         println("CustomTask action execute")
@@ -149,7 +149,7 @@ afterEvaluate {
     //在 mergeDebugResources 和 processDebugResources 之间插入 CustomTask
     val processDebugResources = tasks.findByName("processDebugResources")
     val mergeDebugResources = tasks.findByName("mergeDebugResources")
-    val customTask = tasks.register("customTest")
+    val customTask = tasks.register("customTest", CustomTask::class.java)
 
     customTask.dependsOn(mergeDebugResources)
     processDebugResources.dependsOn(customTask)
