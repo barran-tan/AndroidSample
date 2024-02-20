@@ -15,6 +15,7 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.PermissionChecker
+import androidx.core.view.doOnAttach
 import com.barran.sample.compose.TestCompostActivity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
 import com.barran.sample.constraint.TestConstraintLayoutActivity
@@ -41,6 +42,15 @@ class TestActivity : AppCompatActivity() {
         Log.v(App.TAG, "TestActivity onCreate")
         val listener = ClickListener()
         val view = findViewById<View>(R.id.test_goto_tab)
+        view.post {
+            Log.v(App.TAG, "view post run width ${view.width} height ${view.height}")
+        }
+        view.doOnAttach {
+            Log.v(App.TAG, "view doOnAttach width ${view.width} height ${view.height}")
+        }
+        view.viewTreeObserver.addOnGlobalLayoutListener {
+            Log.v(App.TAG, "view global layout width ${view.width} height ${view.height}")
+        }
         view.setOnClickListener(listener)
         findViewById<View>(R.id.test_goto_fab).setOnClickListener(listener)
         findViewById<View>(R.id.test_goto_collapse_tool_bar).setOnClickListener(listener)
@@ -66,7 +76,22 @@ class TestActivity : AppCompatActivity() {
 //        TestUnit.test()
         //        testPermission()
 
-        setupNotifyChannel()
+//        setupNotifyChannel()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        Log.v(App.TAG, "TestActivity onResume")
+        val view = findViewById<View>(R.id.test_goto_fab)
+        Log.v(App.TAG, "view width ${view.width} height ${view.height}")
+
+        // test log
+//        TestActivity onResume
+//        view width 0 height 0
+//        view doOnAttach width 0 height 0
+//        view global layout width 287 height 126
+//        view post run width 287 height 126
     }
 
     private fun testPermission(){
