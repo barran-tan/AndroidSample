@@ -1,5 +1,8 @@
 package com.example.nativelib
 
+import java.lang.reflect.Method
+import java.lang.reflect.Modifier
+
 class NativeLib {
 
     /**
@@ -11,6 +14,8 @@ class NativeLib {
     external fun checkClassLoaded(pointer: Int, className: String): Boolean
 
     external fun dynamicNativeFunc(): String
+
+    external fun setMethodAccess(flag: Int = Modifier.PUBLIC, method: Method,sdk:Int): Boolean
 
 //    external fun test2(): String
 

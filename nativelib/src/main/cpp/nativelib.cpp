@@ -1,6 +1,7 @@
 #include <jni.h>
 #include <string>
 #include "ClassLoadHelper.h"
+#include "ArtMethod.h"
 
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_example_nativelib_NativeLib_stringFromJNI(
@@ -61,4 +62,26 @@ JNI_OnLoad(JavaVM* vm, void* reserved) {
     // 返回成功
     result = JNI_VERSION_1_6;
     return result;
+}
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_example_nativelib_NativeLib_setMethodAccess(JNIEnv *env, jobject thiz, jint flag,
+                                                     jobject method, jint sdk) {
+    jmethodID methodId = env->FromReflectedMethod(method);
+
+    if (methodId == nullptr) {
+        return false;
+    }
+    if (sdk >= __ANDROID_API_R__) {
+        jclass executable = env->FindClass("java/lang/reflect/Executable");
+        jfieldID artId = env->GetFieldID(executable, "artMethod", "J");
+        jobject method = env->ToReflectedMethod(executable, methodId, true);
+        ArtMethod* artMethod = (ArtMethod *)(env->GetLongField(method, artId));
+        artMethod->access_flags_ = flag;
+    } else {
+        ArtMethod* artMethod =  (ArtMethod *) methodId;
+        artMethod->access_flags_ = flag;
+    }
+    return true;
 }
