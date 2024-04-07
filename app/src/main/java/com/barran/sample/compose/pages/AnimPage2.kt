@@ -269,7 +269,11 @@ fun UploadBtn3() {
 
 }
 
-data class UploadValue(val textAlpha : Float, val boxWidth : Dp, val progress:Int, val progressAlpha:Float){
+data class UploadValue(
+    val textAlpha: Float,
+    val boxWidth: Dp,
+    val progress: Int,
+    val progressAlpha: Float){
     companion object
 }
 

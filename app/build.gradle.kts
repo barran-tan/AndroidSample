@@ -7,6 +7,7 @@ plugins {
 //    id("test.totransform")
 //    id("test.kttransform")
     id("test.resplugin")
+    id("opt.dataclass")
 }
 
 android {

@@ -16,6 +16,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.PermissionChecker
 import androidx.core.view.doOnAttach
+import com.barran.sample.asmtest.dataclass.TestDataClass
 import com.barran.sample.compose.TestCompostActivity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
 import com.barran.sample.constraint.TestConstraintLayoutActivity
@@ -72,11 +73,18 @@ class TestActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
             WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED
         )
+        test()
+    }
 
-//        TestUnit.test()
+    private fun test(){
+
+        //        TestUnit.test()
         //        testPermission()
 
-//        setupNotifyChannel()
+        //        setupNotifyChannel()
+
+        val dataTest = TestDataClass()
+        dataTest.test()
     }
 
     override fun onResume() {
