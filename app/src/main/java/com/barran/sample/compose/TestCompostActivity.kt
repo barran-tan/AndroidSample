@@ -7,8 +7,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.barran.sample.layoutinflater.TestFactory2Activity
 
-class TestCompostActivity:AppCompatActivity() {
+class TestCompostActivity: TestFactory2Activity() {
 
     val naviPages = NaviPages()
 

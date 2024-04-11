@@ -1,12 +1,12 @@
 package com.barran.sample.jni
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.barran.sample.R
 import com.barran.sample.databinding.ActivityTestJniBinding
+import com.barran.sample.layoutinflater.TestFactory2Activity
 import com.example.nativelib.NativeLib
 
-class TestJniActivity : AppCompatActivity() {
+class TestJniActivity : TestFactory2Activity() {
 
     private lateinit var bind: ActivityTestJniBinding
 

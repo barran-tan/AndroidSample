@@ -3,11 +3,11 @@ package com.barran.sample.mdtest
 import android.os.Bundle
 import com.google.android.material.navigation.NavigationView
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Gravity
 import android.view.View
 import android.widget.Toast
 import com.barran.sample.R
+import com.barran.sample.layoutinflater.TestFactory2Activity
 
 /**
  * NavigationView的使用
@@ -15,7 +15,7 @@ import com.barran.sample.R
  * Created by tanwei on 2017/8/15.
  */
 
-class NavigationViewActivity : AppCompatActivity() {
+class NavigationViewActivity : TestFactory2Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigation_view)

@@ -3,17 +3,17 @@ package com.barran.sample.mdtest
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import java.lang.ref.WeakReference
 import com.barran.sample.R
+import com.barran.sample.layoutinflater.TestFactory2Activity
 
 /**
  * CollapsingToolbarLayout包装AppBarLayout实现可缩放的标题栏
  *
  * Created by tanwei on 2016/9/7.
  */
-class CollapsingToolbarInAppBarActivity : AppCompatActivity() {
+class CollapsingToolbarInAppBarActivity : TestFactory2Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collapsing_toolbar_in_app_bar)

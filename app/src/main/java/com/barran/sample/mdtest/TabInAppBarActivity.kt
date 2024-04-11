@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.Toolbar
 import android.view.LayoutInflater
@@ -16,13 +15,14 @@ import android.widget.TextView
 import java.util.ArrayList
 
 import com.barran.sample.R
+import com.barran.sample.layoutinflater.TestFactory2Activity
 
 /**
  * AppBarLayout嵌套TabLayout
  *
  * Created by tanwei on 2016/8/18.
  */
-class TabInAppBarActivity : AppCompatActivity() {
+class TabInAppBarActivity : TestFactory2Activity() {
 
     private var tabLayout: TabLayout? = null
 

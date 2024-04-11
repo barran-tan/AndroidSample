@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
@@ -16,6 +15,7 @@ import android.webkit.WebViewClient
 import android.widget.FrameLayout
 
 import com.barran.sample.R
+import com.barran.sample.layoutinflater.TestFactory2Activity
 
 /**
  * fullscreen video
@@ -23,7 +23,7 @@ import com.barran.sample.R
  * Created by tanwei on 2018/1/26.
  */
 
-class WebVideoActivity : AppCompatActivity() {
+class WebVideoActivity : TestFactory2Activity() {
 
     private var webView: WebView? = null
 

@@ -4,16 +4,13 @@ import android.Manifest
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.PermissionChecker
 import androidx.core.view.doOnAttach
 import com.barran.sample.asmtest.dataclass.TestDataClass
@@ -23,6 +20,7 @@ import com.barran.sample.constraint.TestConstraintLayoutActivity
 import com.barran.sample.hardware.HardwareTestAct
 import com.barran.sample.html.WebVideoActivity
 import com.barran.sample.jni.TestJniActivity
+import com.barran.sample.layoutinflater.TestFactory2Activity
 import com.barran.sample.mdtest.*
 import com.barran.sample.nestedscroll.TestOffsetActivity
 import com.barran.sample.other.OtherTestAct
@@ -35,7 +33,7 @@ import com.barran.sample.view.TestPathActivity
  *
  * Created by tanwei on 2016/9/7.
  */
-class TestActivity : AppCompatActivity() {
+class TestActivity : TestFactory2Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

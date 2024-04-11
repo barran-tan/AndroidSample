@@ -20,10 +20,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import com.barran.sample.R
 import com.barran.sample.databinding.ActivityPhotoPickerBinding
+import com.barran.sample.layoutinflater.TestFactory2Activity
 
 private const val TAG = "photoPicker"
 
-class PhotoPickerActivity : AppCompatActivity() {
+class PhotoPickerActivity : TestFactory2Activity() {
 
     private val DEFAULT_PHOTO_SIZE = 3
 

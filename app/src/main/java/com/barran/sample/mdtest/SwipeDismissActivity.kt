@@ -3,12 +3,12 @@ package com.barran.sample.mdtest
 import android.os.Bundle
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.behavior.SwipeDismissBehavior
-import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.TextView
 
 import com.barran.sample.R
+import com.barran.sample.layoutinflater.TestFactory2Activity
 
 /**
  *
@@ -16,7 +16,7 @@ import com.barran.sample.R
  * Created by tanwei on 2016/10/31.
  */
 
-class SwipeDismissActivity : AppCompatActivity() {
+class SwipeDismissActivity : TestFactory2Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

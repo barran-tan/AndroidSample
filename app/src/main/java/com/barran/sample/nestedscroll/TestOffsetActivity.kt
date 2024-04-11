@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 
 import com.barran.sample.R
+import com.barran.sample.layoutinflater.TestFactory2Activity
 
 /**
  * view的移动
@@ -12,7 +13,7 @@ import com.barran.sample.R
  * Created by tanwei on 2018/5/10.
  */
 
-class TestOffsetActivity : AppCompatActivity() {
+class TestOffsetActivity : TestFactory2Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

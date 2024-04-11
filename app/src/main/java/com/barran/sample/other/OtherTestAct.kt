@@ -6,10 +6,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import com.barran.sample.R
+import com.barran.sample.layoutinflater.TestFactory2Activity
 
-class OtherTestAct : AppCompatActivity() {
+class OtherTestAct : TestFactory2Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_other)

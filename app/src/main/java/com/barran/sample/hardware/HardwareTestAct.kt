@@ -11,13 +11,14 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.barran.sample.R
 import com.barran.sample.databinding.ActHardwareTestBinding
+import com.barran.sample.layoutinflater.TestFactory2Activity
 
 /**
  * description
  *
  * on 2022/5/17
  */
-class HardwareTestAct : AppCompatActivity() {
+class HardwareTestAct : TestFactory2Activity() {
 
     private lateinit var bind: ActHardwareTestBinding
 
