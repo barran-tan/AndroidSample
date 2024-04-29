@@ -41,10 +41,15 @@ open class TestFactory2Activity : AppCompatActivity() {
 
 class TestFactory2(inflater: LayoutInflater, private val factoryDelegate: Factory2) : Factory2 {
 
+    // factory和factory2为null
     private var factory2: Factory2? = null
     private var factory: Factory? = null
+    // mPrivateFactory为Activity，见实现Activity.onCreateView(仅处理fragment)
     private var defaultFactory: Factory2? = null
 
+    // factoryDelegate为AppCompatDelegateImpl，通过AppCompatViewInflater#createView来完成view创建
+    // 但是AppCompatViewInflater#createView调用createViewFromTag时，有一个判断，测试发现不满足，导致除了部分compat View，其他没有处理
+    // 可以直接通过反射AppCompatViewInflater#createViewFromTag来创建其他view
     private val compatViewInflater = AppCompatViewInflater()
     private var createViewFromTagMethod: Method? = null
 
