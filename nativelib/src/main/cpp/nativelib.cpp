@@ -85,3 +85,29 @@ Java_com_example_nativelib_NativeLib_setMethodAccess(JNIEnv *env, jobject thiz, 
     }
     return true;
 }
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_example_nativelib_NativeLib_setConstructorAccess(JNIEnv *env, jobject thiz, jint flag,
+                                                          jobject constructor, jint sdk) {
+    jmethodID methodId = env->FromReflectedMethod(constructor);
+
+    if (methodId == nullptr) {
+        return false;
+    }
+    if (sdk >= __ANDROID_API_R__) {
+        jclass executable = env->FindClass("java/lang/reflect/Executable");
+        jfieldID artId = env->GetFieldID(executable, "artMethod", "J");
+        jobject method = env->ToReflectedMethod(executable, methodId, true);
+        ArtMethod* artMethod = (ArtMethod *)(env->GetLongField(method, artId));
+        int new_flag = artMethod->access_flags_ | flag;
+//        if ((new_flag & 0x10) != 0) {
+//            new_flag = new_flag = 0x10;
+//        }
+        artMethod->access_flags_ = new_flag;
+    } else {
+        ArtMethod* artMethod =  (ArtMethod *) methodId;
+        artMethod->access_flags_ = flag;
+    }
+    return true;
+}

@@ -6,6 +6,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,7 @@ import com.barran.sample.compose.TestCompostActivity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
 import com.barran.sample.constraint.TestConstraintLayoutActivity
 import com.barran.sample.hardware.HardwareTestAct
+import com.barran.sample.hook.NewBitmapDrawable
 import com.barran.sample.html.WebVideoActivity
 import com.barran.sample.jni.TestJniActivity
 import com.barran.sample.layoutinflater.TestFactory2Activity
@@ -74,15 +76,19 @@ class TestActivity : TestFactory2Activity() {
         test()
     }
 
-    private fun test(){
+    private fun test() {
 
         //        TestUnit.test()
         //        testPermission()
 
         //        setupNotifyChannel()
 
-        val dataTest = TestDataClass()
-        dataTest.test()
+//        val dataTest = TestDataClass()
+//        dataTest.test()
+
+        val drawable = NewBitmapDrawable((getDrawable(R.drawable.delete) as BitmapDrawable).bitmap)
+        val drawable2 = drawable.constantState?.newDrawable()
+        Log.v("bitmap", "state=${drawable.constantState} newDrawable=${drawable2}")
     }
 
     override fun onResume() {
@@ -100,7 +106,7 @@ class TestActivity : TestFactory2Activity() {
 //        view post run width 287 height 126
     }
 
-    private fun testPermission(){
+    private fun testPermission() {
         val permission = PermissionChecker.checkSelfPermission(
             this@TestActivity,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -141,7 +147,7 @@ class TestActivity : TestFactory2Activity() {
         chatChannel.setShowBadge(true)
         manager.createNotificationChannel(chatChannel)
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 2222)
         }
     }
@@ -181,14 +187,18 @@ class TestActivity : TestFactory2Activity() {
                 }
 
                 R.id.test_goto_fab -> {
-                    intent = Intent(this@TestActivity,
-                            FABInCoordinateLayoutActivity::class.java)
+                    intent = Intent(
+                        this@TestActivity,
+                        FABInCoordinateLayoutActivity::class.java
+                    )
                     startActivity(intent)
                 }
 
                 R.id.test_goto_collapse_tool_bar -> {
-                    intent = Intent(this@TestActivity,
-                            CollapsingToolbarInAppBarActivity::class.java)
+                    intent = Intent(
+                        this@TestActivity,
+                        CollapsingToolbarInAppBarActivity::class.java
+                    )
                     startActivity(intent)
                 }
 
@@ -203,8 +213,10 @@ class TestActivity : TestFactory2Activity() {
                 }
 
                 R.id.test_constraint_activity -> {
-                    intent = Intent(this@TestActivity,
-                            TestConstraintLayoutActivity::class.java)
+                    intent = Intent(
+                        this@TestActivity,
+                        TestConstraintLayoutActivity::class.java
+                    )
                     startActivity(intent)
                 }
 
@@ -254,7 +266,7 @@ class TestActivity : TestFactory2Activity() {
                     )
                 }
 
-                R.id.test_photo_picker->{
+                R.id.test_photo_picker -> {
                     startActivity(
                         Intent(
                             this@TestActivity,

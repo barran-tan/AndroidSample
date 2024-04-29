@@ -13,14 +13,16 @@ import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
-import org.gradle.api.internal.tasks.properties.InputFilePropertyType
-import org.gradle.api.internal.tasks.properties.OutputFilePropertyType
-import org.gradle.api.internal.tasks.properties.PropertyValue
-import org.gradle.api.internal.tasks.properties.PropertyVisitor
+import org.gradle.api.services.BuildService
 import org.gradle.api.tasks.FileNormalizer
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.internal.fingerprint.DirectorySensitivity
 import org.gradle.internal.fingerprint.LineEndingSensitivity
+import org.gradle.internal.properties.InputBehavior
+import org.gradle.internal.properties.InputFilePropertyType
+import org.gradle.internal.properties.OutputFilePropertyType
+import org.gradle.internal.properties.PropertyValue
+import org.gradle.internal.properties.PropertyVisitor
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -137,27 +139,34 @@ class ResPlugin : Plugin<Project> {
                         }
                         println("outputs ${linkResources.outputs}")
                         linkResources.outputs.visitRegisteredProperties(object :
-                            PropertyVisitor.Adapter(){
+                            PropertyVisitor{
+
+
                             override fun visitInputFileProperty(
                                 propertyName: String,
                                 optional: Boolean,
-                                skipWhenEmpty: Boolean,
+                                behavior: InputBehavior,
                                 directorySensitivity: DirectorySensitivity,
                                 lineEndingSensitivity: LineEndingSensitivity,
-                                incremental: Boolean,
-                                fileNormalizer: Class<out FileNormalizer>?,
+                                fileNormalizer: org.gradle.internal.fingerprint.FileNormalizer?,
                                 value: PropertyValue,
                                 filePropertyType: InputFilePropertyType
                             ) {
                                 println("visitInputFileProperty name=$propertyName value=${value.call()} optional=$optional")
                             }
 
-                            override fun visitInputProperty(
+                            override fun visitLocalStateProperty(value: Any) {
+                                println("visitLocalStateProperty value=$value")
+                            }
+
+                            override fun visitServiceReference(
                                 propertyName: String,
+                                optional: Boolean,
                                 value: PropertyValue,
-                                optional: Boolean
+                                serviceName: String?,
+                                buildServiceType: Class<out BuildService<*>>
                             ) {
-                                println("visitInputProperty name=$propertyName value=${value.call()} optional=$optional")
+                                println("visitServiceReference name=$propertyName value=${value.call()} optional=$optional")
                             }
 
                             override fun visitOutputFileProperty(

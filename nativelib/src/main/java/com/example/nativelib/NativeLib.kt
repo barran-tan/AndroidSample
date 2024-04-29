@@ -1,5 +1,6 @@
 package com.example.nativelib
 
+import java.lang.reflect.Constructor
 import java.lang.reflect.Method
 import java.lang.reflect.Modifier
 
@@ -16,6 +17,12 @@ class NativeLib {
     external fun dynamicNativeFunc(): String
 
     external fun setMethodAccess(flag: Int = Modifier.PUBLIC, method: Method,sdk:Int): Boolean
+
+    external fun setConstructorAccess(
+        flag: Int = Modifier.PUBLIC,
+        constructor: Constructor<*>,
+        sdk: Int
+    ): Boolean
 
 //    external fun test2(): String
 

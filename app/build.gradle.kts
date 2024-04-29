@@ -1,5 +1,3 @@
-import com.android.build.gradle.internal.tasks.factory.dependsOn
-
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -55,6 +53,7 @@ android {
         kotlinCompilerExtensionVersion = Versions.compose_compiler_extension
     }
     dynamicFeatures.add(":dynamicfeature")
+    namespace = "com.barran.sample"
 }
 
 dependencies {
@@ -137,4 +136,8 @@ dependencies {
     // endregion
 
     implementation("com.github.tiann:FreeReflection:3.1.0")
+
+    compileOnly(files("libs/hidden-api.jar"))
+
+    implementation("com.headius:unsafe-mock:8.92.1")
 }
