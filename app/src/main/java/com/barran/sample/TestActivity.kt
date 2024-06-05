@@ -27,6 +27,7 @@ import com.barran.sample.mdtest.*
 import com.barran.sample.nestedscroll.TestOffsetActivity
 import com.barran.sample.other.OtherTestAct
 import com.barran.sample.photopicker.PhotoPickerActivity
+import com.barran.sample.reflect.TestReflect
 import com.barran.sample.view.TestPathActivity
 
 
@@ -86,9 +87,13 @@ class TestActivity : TestFactory2Activity() {
 //        val dataTest = TestDataClass()
 //        dataTest.test()
 
-        val drawable = NewBitmapDrawable((getDrawable(R.drawable.delete) as BitmapDrawable).bitmap)
-        val drawable2 = drawable.constantState?.newDrawable()
-        Log.v("bitmap", "state=${drawable.constantState} newDrawable=${drawable2}")
+//        val drawable = NewBitmapDrawable((getDrawable(R.drawable.delete) as BitmapDrawable).bitmap)
+//        val drawable2 = drawable.constantState?.newDrawable()
+//        Log.v("bitmap", "state=${drawable.constantState} newDrawable=${drawable2}")
+
+        val id = R.drawable.delete
+        val value = TestReflect.getValue(id)
+        Log.i(App.TAG, "get value of ${Integer.toHexString(id)} : $value  den=${value?.density ?: 0}")
     }
 
     override fun onResume() {
