@@ -15,6 +15,7 @@ import android.view.WindowManager
 import androidx.core.content.PermissionChecker
 import androidx.core.view.doOnAttach
 import com.barran.sample.asmtest.dataclass.TestDataClass
+import com.barran.sample.compat.TestCompatActivity
 import com.barran.sample.compose.TestCompostActivity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
 import com.barran.sample.constraint.TestConstraintLayoutActivity
@@ -69,6 +70,7 @@ class TestActivity : TestFactory2Activity() {
         findViewById<View>(R.id.test_photo_picker).setOnClickListener(listener)
         findViewById<View>(R.id.test_compose).setOnClickListener(listener)
         findViewById<View>(R.id.test_native).setOnClickListener(listener)
+        findViewById<View>(R.id.test_compat).setOnClickListener(listener)
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
@@ -296,6 +298,35 @@ class TestActivity : TestFactory2Activity() {
                             TestJniActivity::class.java
                         )
                     )
+                }
+
+                R.id.test_compat -> {
+                    // FATAL EXCEPTION: main
+                    //     Process: com.barran.androidsample, PID: 8420
+                    //     android.content.ActivityNotFoundException: No Activity found to handle Intent { act=test.compat }
+                    //     	at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:2430)
+                    //     	at android.app.Instrumentation.execStartActivity(Instrumentation.java:2005)
+                    //     	at android.app.Activity.startActivityForResult(Activity.java:5840)
+                    //     	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:728)
+                    //     	at android.app.Activity.startActivityForResult(Activity.java:5798)
+                    //     	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:709)
+                    //     	at android.app.Activity.startActivity(Activity.java:6295)
+                    //     	at android.app.Activity.startActivity(Activity.java:6262)
+                    //     	at com.barran.sample.TestActivity$ClickListener.onClick(TestActivity.kt:303)
+//                    startActivity(
+//                        Intent("test.compat")
+//                    )
+
+                    val intent = Intent("test.compat")
+                    intent.setPackage(applicationContext.packageName)
+                    startActivity(intent)
+
+//                    startActivity(
+//                        Intent(
+//                            this@TestActivity,
+//                            TestCompatActivity::class.java
+//                        )
+//                    )
                 }
             }
         }

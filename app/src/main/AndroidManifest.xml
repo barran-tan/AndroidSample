@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
+    <permission android:name="barran.permission" />
+    <uses-permission android:name="barran.permission" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -51,6 +54,14 @@
 
         <activity android:name=".compose.TestCompostActivity"/>
         <activity android:name=".jni.TestJniActivity"/>
+        <activity
+            android:name=".compat.TestCompatActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="test.compat" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

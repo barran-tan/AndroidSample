@@ -16,8 +16,8 @@ class HAImageView @JvmOverloads constructor(
     style: Int = 0
 ) : AppCompatImageView(context, attributes, style) {
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        Log.d(TAG, "onDraw: canvas=${canvas?.isHardwareAccelerated} view=${isHardwareAccelerated}")
+        Log.d(TAG, "onDraw: canvas=${canvas.isHardwareAccelerated} view=${isHardwareAccelerated}")
     }
 }

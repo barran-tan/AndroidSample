@@ -26,11 +26,8 @@ class CustomView @JvmOverloads constructor(
         textWidth = paint.measureText(text)
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
-        canvas?.apply {
-            drawText(text, (width - textWidth) / 2, height / 2f, paint)
-        }
+        canvas.drawText(text, (width - textWidth) / 2, height / 2f, paint)
     }
 }
