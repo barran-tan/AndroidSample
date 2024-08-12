@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.barran.sample.App
 import java.util.*
 import kotlin.math.abs
 import kotlin.math.min
@@ -208,6 +209,7 @@ class SwipeDeleteActivity : Activity() {
         override fun onCreateViewHolder(parent: ViewGroup,
                                         viewType: Int): Holder {
             val tv = TextView(parent.context)
+            tv.width = App.context.resources.displayMetrics.widthPixels
             tv.setPadding(0, 30, 0, 30)
             return Holder(tv)
         }

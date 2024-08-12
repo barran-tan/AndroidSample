@@ -140,4 +140,6 @@ dependencies {
     compileOnly(files("libs/hidden-api.jar"))
 
     implementation("com.headius:unsafe-mock:8.92.1")
+
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
 }

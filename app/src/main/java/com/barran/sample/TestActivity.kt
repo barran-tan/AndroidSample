@@ -6,21 +6,21 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.TextView
 import androidx.core.content.PermissionChecker
 import androidx.core.view.doOnAttach
-import com.barran.sample.asmtest.dataclass.TestDataClass
-import com.barran.sample.compat.TestCompatActivity
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.barran.sample.compose.TestCompostActivity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
 import com.barran.sample.constraint.TestConstraintLayoutActivity
 import com.barran.sample.hardware.HardwareTestAct
-import com.barran.sample.hook.NewBitmapDrawable
 import com.barran.sample.html.WebVideoActivity
 import com.barran.sample.jni.TestJniActivity
 import com.barran.sample.layoutinflater.TestFactory2Activity
@@ -29,6 +29,7 @@ import com.barran.sample.nestedscroll.TestOffsetActivity
 import com.barran.sample.other.OtherTestAct
 import com.barran.sample.photopicker.PhotoPickerActivity
 import com.barran.sample.reflect.TestReflect
+import com.barran.sample.utils.dp
 import com.barran.sample.view.TestPathActivity
 
 
@@ -39,38 +40,23 @@ import com.barran.sample.view.TestPathActivity
  */
 class TestActivity : TestFactory2Activity() {
 
+    private lateinit var recyclerView: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.v(App.TAG, "TestActivity onCreate")
-        val listener = ClickListener()
-        val view = findViewById<View>(R.id.test_goto_tab)
-        view.post {
-            Log.v(App.TAG, "view post run width ${view.width} height ${view.height}")
+        recyclerView = findViewById(R.id.entry_list)
+        setupEntries()
+        recyclerView.post {
+            Log.v(App.TAG, "view post run width ${recyclerView.width} height ${recyclerView.height}")
         }
-        view.doOnAttach {
-            Log.v(App.TAG, "view doOnAttach width ${view.width} height ${view.height}")
+        recyclerView.doOnAttach {
+            Log.v(App.TAG, "view doOnAttach width ${recyclerView.width} height ${recyclerView.height}")
         }
-        view.viewTreeObserver.addOnGlobalLayoutListener {
-            Log.v(App.TAG, "view global layout width ${view.width} height ${view.height}")
+        recyclerView.viewTreeObserver.addOnGlobalLayoutListener {
+            Log.v(App.TAG, "view global layout width ${recyclerView.width} height ${recyclerView.height}")
         }
-        view.setOnClickListener(listener)
-        findViewById<View>(R.id.test_goto_fab).setOnClickListener(listener)
-        findViewById<View>(R.id.test_goto_collapse_tool_bar).setOnClickListener(listener)
-        findViewById<View>(R.id.test_swipe_dismiss).setOnClickListener(listener)
-        findViewById<View>(R.id.test_swipe_delete).setOnClickListener(listener)
-        findViewById<View>(R.id.test_constraint_activity).setOnClickListener(listener)
-        findViewById<View>(R.id.test_path).setOnClickListener(listener)
-        findViewById<View>(R.id.test_navigation_view).setOnClickListener(listener)
-        findViewById<View>(R.id.test_web_video).setOnClickListener(listener)
-        findViewById<View>(R.id.test_offset).setOnClickListener(listener)
-        findViewById<View>(R.id.test_constraint_1_1).setOnClickListener(listener)
-        findViewById<View>(R.id.test_hardware_accelerated).setOnClickListener(listener)
-        findViewById<View>(R.id.test_other).setOnClickListener(listener)
-        findViewById<View>(R.id.test_photo_picker).setOnClickListener(listener)
-        findViewById<View>(R.id.test_compose).setOnClickListener(listener)
-        findViewById<View>(R.id.test_native).setOnClickListener(listener)
-        findViewById<View>(R.id.test_compat).setOnClickListener(listener)
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
@@ -102,8 +88,7 @@ class TestActivity : TestFactory2Activity() {
         super.onResume()
 
         Log.v(App.TAG, "TestActivity onResume")
-        val view = findViewById<View>(R.id.test_goto_fab)
-        Log.v(App.TAG, "view width ${view.width} height ${view.height}")
+        Log.v(App.TAG, "view width ${recyclerView.width} height ${recyclerView.height}")
 
         // test log
 //        TestActivity onResume
@@ -184,151 +169,104 @@ class TestActivity : TestFactory2Activity() {
         }
     }
 
-    internal inner class ClickListener : View.OnClickListener {
-        override fun onClick(v: View?) {
-            val intent: Intent
-            when (v?.id) {
-                R.id.test_goto_tab -> {
-                    intent = Intent(this@TestActivity, TabInAppBarActivity::class.java)
-                    startActivity(intent)
-                }
+        fun setupEntries() {
 
-                R.id.test_goto_fab -> {
-                    intent = Intent(
-                        this@TestActivity,
-                        FABInCoordinateLayoutActivity::class.java
-                    )
-                    startActivity(intent)
-                }
-
-                R.id.test_goto_collapse_tool_bar -> {
-                    intent = Intent(
-                        this@TestActivity,
-                        CollapsingToolbarInAppBarActivity::class.java
-                    )
-                    startActivity(intent)
-                }
-
-                R.id.test_swipe_dismiss -> {
-                    intent = Intent(this@TestActivity, SwipeDismissActivity::class.java)
-                    startActivity(intent)
-                }
-
-                R.id.test_swipe_delete -> {
-                    intent = Intent(this@TestActivity, SwipeDeleteActivity::class.java)
-                    startActivity(intent)
-                }
-
-                R.id.test_constraint_activity -> {
-                    intent = Intent(
-                        this@TestActivity,
-                        TestConstraintLayoutActivity::class.java
-                    )
-                    startActivity(intent)
-                }
-
-                R.id.test_path -> {
-                    intent = Intent(this@TestActivity, TestPathActivity::class.java)
-                    startActivity(intent)
-                }
-
-                R.id.test_navigation_view -> {
-                    intent = Intent(this@TestActivity, NavigationViewActivity::class.java)
-                    startActivity(intent)
-                }
-
-                R.id.test_web_video -> {
-                    intent = Intent(this@TestActivity, WebVideoActivity::class.java)
-                    startActivity(intent)
-                }
-
-                R.id.test_offset -> {
-                    intent = Intent(this@TestActivity, TestOffsetActivity::class.java)
-                    startActivity(intent)
-                }
-
-                R.id.test_constraint_1_1 -> {
-                    intent = Intent(
-                        this@TestActivity,
-                        TestConstraintLayout2Activity::class.java
-                    )
-                    startActivity(intent)
-                }
-
-                R.id.test_hardware_accelerated -> {
-                    startActivity(
-                        Intent(
-                            this@TestActivity,
-                            HardwareTestAct::class.java
-                        )
-                    )
-                }
-
-                R.id.test_other -> {
-                    startActivity(
-                        Intent(
-                            this@TestActivity,
-                            OtherTestAct::class.java
-                        )
-                    )
-                }
-
-                R.id.test_photo_picker -> {
-                    startActivity(
-                        Intent(
-                            this@TestActivity,
-                            PhotoPickerActivity::class.java
-                        )
-                    )
-                }
-
-                R.id.test_compose -> {
-                    startActivity(
-                        Intent(
-                            this@TestActivity,
-                            TestCompostActivity::class.java
-                        )
-                    )
-                }
-
-                R.id.test_native -> {
-                    startActivity(
-                        Intent(
-                            this@TestActivity,
-                            TestJniActivity::class.java
-                        )
-                    )
-                }
-
-                R.id.test_compat -> {
-                    // FATAL EXCEPTION: main
-                    //     Process: com.barran.androidsample, PID: 8420
-                    //     android.content.ActivityNotFoundException: No Activity found to handle Intent { act=test.compat }
-                    //     	at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:2430)
-                    //     	at android.app.Instrumentation.execStartActivity(Instrumentation.java:2005)
-                    //     	at android.app.Activity.startActivityForResult(Activity.java:5840)
-                    //     	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:728)
-                    //     	at android.app.Activity.startActivityForResult(Activity.java:5798)
-                    //     	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:709)
-                    //     	at android.app.Activity.startActivity(Activity.java:6295)
-                    //     	at android.app.Activity.startActivity(Activity.java:6262)
-                    //     	at com.barran.sample.TestActivity$ClickListener.onClick(TestActivity.kt:303)
-//                    startActivity(
+            // entry data
+            val entries = listOf(
+                "test_goto_tab" to Intent(this@TestActivity, TabInAppBarActivity::class.java),
+                "test_goto_fab" to Intent(
+                    this@TestActivity,
+                    FABInCoordinateLayoutActivity::class.java
+                ),
+                "test_goto_collapse_tool_bar" to Intent(
+                    this@TestActivity,
+                    CollapsingToolbarInAppBarActivity::class.java
+                ),
+                "test_swipe_dismiss" to Intent(this@TestActivity, SwipeDismissActivity::class.java),
+                "test_swipe_delete" to Intent(this@TestActivity, SwipeDeleteActivity::class.java),
+                "test_constraint_activity" to Intent(
+                    this@TestActivity,
+                    TestConstraintLayoutActivity::class.java
+                ),
+                "test_path" to Intent(this@TestActivity, TestPathActivity::class.java),
+                "test_navigation_view" to Intent(
+                    this@TestActivity,
+                    NavigationViewActivity::class.java
+                ),
+                "test_web_video" to Intent(this@TestActivity, WebVideoActivity::class.java),
+                "test_offset" to Intent(this@TestActivity, TestOffsetActivity::class.java),
+                "test_constraint_1_1" to Intent(
+                    this@TestActivity,
+                    TestConstraintLayout2Activity::class.java
+                ),
+                "test_hardware_accelerated" to Intent(
+                    this@TestActivity,
+                    HardwareTestAct::class.java
+                ),
+                "test_other" to Intent(
+                    this@TestActivity,
+                    OtherTestAct::class.java
+                ),
+                "test_photo_picker" to Intent(
+                    this@TestActivity,
+                    PhotoPickerActivity::class.java
+                ),
+                "test_compose" to Intent(
+                    this@TestActivity,
+                    TestCompostActivity::class.java
+                ),
+                "test_native" to Intent(
+                    this@TestActivity,
+                    TestJniActivity::class.java
+                ),
+                "test_compat" to
+                        // FATAL EXCEPTION: main
+                        //     Process: com.barran.androidsample, PID: 8420
+                        //     android.content.ActivityNotFoundException: No Activity found to handle Intent { act=test.compat }
+                        //     	at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:2430)
+                        //     	at android.app.Instrumentation.execStartActivity(Instrumentation.java:2005)
+                        //     	at android.app.Activity.startActivityForResult(Activity.java:5840)
+                        //     	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:728)
+                        //     	at android.app.Activity.startActivityForResult(Activity.java:5798)
+                        //     	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:709)
+                        //     	at android.app.Activity.startActivity(Activity.java:6295)
+                        //     	at android.app.Activity.startActivity(Activity.java:6262)
+                        //     	at com.barran.sample.TestActivity$ClickListener.onClick(TestActivity.kt:303)
 //                        Intent("test.compat")
-//                    )
 
-                    val intent = Intent("test.compat")
-                    intent.setPackage(applicationContext.packageName)
-                    startActivity(intent)
+                        Intent("test.compat").setPackage(applicationContext.packageName)
 
-//                    startActivity(
-//                        Intent(
-//                            this@TestActivity,
-//                            TestCompatActivity::class.java
-//                        )
-//                    )
-                }
+            )
+
+            recyclerView.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
+            recyclerView.adapter = EntryAdapter(entries.asSequence().map { it.first }.toList()){
+                startActivity(entries[it].second)
             }
+
         }
     }
+
+private class EntryAdapter(
+    private val entryList: List<String>,
+    private val listener: (Int) -> Unit
+) : RecyclerView.Adapter<EntryHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EntryHolder {
+        val text = TextView(parent.context)
+        text.setPadding(12.dp, 8.dp, 12.dp, 8.dp)
+        val holder = EntryHolder(text)
+        text.setOnClickListener {
+            listener.invoke(holder.bindingAdapterPosition)
+        }
+        return holder
+    }
+
+    override fun onBindViewHolder(holder: EntryHolder, position: Int) {
+        holder.textView.text = entryList[position]
+    }
+
+    override fun getItemCount(): Int {
+        return entryList.size
+    }
 }
+
+private class EntryHolder(val textView:TextView):RecyclerView.ViewHolder(textView)

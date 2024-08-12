@@ -9,7 +9,7 @@ public class TestR {
             @Override
             public void onClick(View v) {
                 switch (v.getId()){
-                    case R.id.test_photo_picker:
+                    case R.id.entry_list:
                         break;
                 }
             }
