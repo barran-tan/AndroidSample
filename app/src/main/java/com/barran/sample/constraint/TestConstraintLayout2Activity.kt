@@ -14,6 +14,6 @@ import com.barran.sample.R
 class TestConstraintLayout2Activity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.test_constraint_layout_v1_1)
+        setContentView(R.layout.activity_constraint_layout_v1_1)
     }
 }

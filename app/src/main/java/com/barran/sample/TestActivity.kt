@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.barran.sample.compose.TestCompostActivity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
+import com.barran.sample.constraint.TestConstraintLayout3Activity
 import com.barran.sample.constraint.TestConstraintLayoutActivity
 import com.barran.sample.hardware.HardwareTestAct
 import com.barran.sample.html.WebVideoActivity
@@ -234,7 +235,11 @@ class TestActivity : TestFactory2Activity() {
                         //     	at com.barran.sample.TestActivity$ClickListener.onClick(TestActivity.kt:303)
 //                        Intent("test.compat")
 
-                        Intent("test.compat").setPackage(applicationContext.packageName)
+                        Intent("test.compat").setPackage(applicationContext.packageName),
+                "test_test_constraint_2" to Intent(
+                    this@TestActivity,
+                    TestConstraintLayout3Activity::class.java
+                )
 
             )
 

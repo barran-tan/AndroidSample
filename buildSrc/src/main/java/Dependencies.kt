@@ -1,7 +1,7 @@
 object Versions {
     const val supportVersion = "1.1.0"
     const val materialVersion = "1.0.0"
-    const val constraintVersion = "1.1.3"
+    const val constraintVersion = "2.1.4"
     const val jodaTimeVersion = "2.9.9"
     const val pagingVersion = "2.1.0"
     const val ktsVersion = "1.1.0"
