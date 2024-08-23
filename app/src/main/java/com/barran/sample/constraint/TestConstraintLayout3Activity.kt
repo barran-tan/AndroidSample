@@ -9,7 +9,7 @@ import com.barran.sample.R
 import com.barran.sample.databinding.ActivityConstraintLayoutV2Binding
 
 /**
- * ConstraintLayout 2.0新增特性
+ * ConstraintLayout 2.0新增特性:Flow & ConstraintHelper
  */
 class TestConstraintLayout3Activity:AppCompatActivity() {
     private lateinit var binding:ActivityConstraintLayoutV2Binding

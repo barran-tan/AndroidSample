@@ -9,7 +9,6 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.TextView
@@ -18,6 +17,7 @@ import androidx.core.view.doOnAttach
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.barran.sample.compose.TestCompostActivity
+import com.barran.sample.constraint.TestConstraintLayout4Activity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
 import com.barran.sample.constraint.TestConstraintLayout3Activity
 import com.barran.sample.constraint.TestConstraintLayoutActivity
@@ -239,6 +239,10 @@ class TestActivity : TestFactory2Activity() {
                 "test_test_constraint_2" to Intent(
                     this@TestActivity,
                     TestConstraintLayout3Activity::class.java
+                ),
+                "test_test_constraint_2_filter" to Intent(
+                    this@TestActivity,
+                    TestConstraintLayout4Activity::class.java
                 )
 
             )

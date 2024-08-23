@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/image_filter_view_round"
+            android:layout_width="160dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/icon_head"
+            app:layout_constraintBottom_toTopOf="@+id/image_filter_view_round_percent"
+            app:layout_constraintEnd_toStartOf="@+id/image_filter_view_zoom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:round="50dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/image_filter_view_zoom"
+            android:layout_width="160dp"
+            android:layout_height="100dp"
+            android:src="@drawable/icon_head"
+            app:imageZoom="1.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_filter_view_round"
+            app:layout_constraintTop_toTopOf="@+id/image_filter_view_round" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/image_filter_view_round_percent"
+            android:layout_width="160dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icon_head"
+            app:layout_constraintEnd_toStartOf="@+id/image_filter_view_rotate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_filter_view_round"
+            app:roundPercent="1" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/image_filter_view_rotate"
+            android:layout_width="160dp"
+            android:layout_height="100dp"
+            android:src="@drawable/icon_head"
+            app:imageRotate="45"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_filter_view_round_percent"
+            app:layout_constraintTop_toTopOf="@+id/image_filter_view_round_percent" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/image_filter_view_cross_fade_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/ic_launcher"
+            app:altSrc="@drawable/delete"
+            app:crossfade="0"
+            app:layout_constraintEnd_toStartOf="@+id/image_filter_view_cross_fade_05"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_filter_view_round_percent" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/image_filter_view_cross_fade_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            app:altSrc="@drawable/delete"
+            app:crossfade="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/image_filter_view_cross_fade_1"
+            app:layout_constraintStart_toEndOf="@+id/image_filter_view_cross_fade_0"
+            app:layout_constraintTop_toTopOf="@+id/image_filter_view_cross_fade_0" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/image_filter_view_cross_fade_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            app:altSrc="@drawable/delete"
+            app:crossfade="01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_filter_view_cross_fade_05"
+            app:layout_constraintTop_toTopOf="@+id/image_filter_view_cross_fade_0" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="@id/view2"
+            app:layout_constraintEnd_toStartOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/view2"
+            app:warmth="0" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toTopOf="@+id/view5"
+            app:layout_constraintEnd_toStartOf="@+id/view3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/image_filter_view_cross_fade_0"
+            app:warmth="5" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="@id/view2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@id/view2"
+            app:warmth="9" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:brightness="0"
+            app:layout_constraintBottom_toBottomOf="@id/view5"
+            app:layout_constraintEnd_toStartOf="@+id/view5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/view5" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:brightness="5"
+            app:layout_constraintBottom_toTopOf="@+id/view8"
+            app:layout_constraintEnd_toStartOf="@+id/view6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/view4"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:brightness="9"
+            app:layout_constraintBottom_toBottomOf="@id/view5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/view5"
+            app:layout_constraintTop_toTopOf="@id/view5" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="@id/view8"
+            app:layout_constraintEnd_toStartOf="@+id/view8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/view8"
+            app:saturation="0" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toTopOf="@+id/view11"
+            app:layout_constraintEnd_toStartOf="@+id/view9"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/view7"
+            app:layout_constraintTop_toBottomOf="@+id/view5"
+            app:saturation="5" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="@id/view8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/view8"
+            app:layout_constraintTop_toTopOf="@id/view8"
+            app:saturation="9" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view10"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:contrast="0"
+            app:layout_constraintBottom_toBottomOf="@id/view11"
+            app:layout_constraintEnd_toStartOf="@+id/view11"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/view11" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view11"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:contrast="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view12"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/view10"
+            app:layout_constraintTop_toBottomOf="@+id/view8" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/view12"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:contrast="9"
+            app:layout_constraintBottom_toBottomOf="@id/view11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/view11"
+            app:layout_constraintTop_toTopOf="@id/view11" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
