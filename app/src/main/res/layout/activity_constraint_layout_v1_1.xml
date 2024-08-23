@@ -136,28 +136,34 @@
     <!-- Placeholder -->
     <include layout="@layout/layout_constraint_template" />
 
+    <!--textView实际高宽48dp，但是设置为wrap-content时gravity失效-->
+    <!--width设为0dp可以左右居中，height设为0dp仍不能上下居中-->
     <TextView
         android:id="@+id/save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:text="save" />
 
     <TextView
         android:id="@+id/edit"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:text="edit" />
 
     <TextView
         android:id="@+id/cancel"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:text="cancel" />
 
     <ImageView
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:tint="@color/green"
         android:src="@drawable/delete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
