@@ -48,6 +48,7 @@
         <activity android:name="com.barran.sample.constraint.TestConstraintLayout2Activity" />
         <activity android:name="com.barran.sample.constraint.TestConstraintLayout3Activity" />
         <activity android:name="com.barran.sample.constraint.TestConstraintLayout4Activity" />
+        <activity android:name="com.barran.sample.constraint.TestMotionCarouselActivity" />
         <activity
             android:name="com.barran.sample.hardware.HardwareTestAct"
             android:hardwareAccelerated="false" />

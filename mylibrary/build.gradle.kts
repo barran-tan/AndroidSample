@@ -1,3 +1,5 @@
+import com.android.build.gradle.api.BaseVariantOutput
+
 plugins {
     id("com.android.library")
 }

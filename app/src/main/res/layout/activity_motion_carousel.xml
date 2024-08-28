@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    app:layoutDescription="@xml/motion_carousel_scene"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glm1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glm2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/image_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:tag="1"
+        android:src="@drawable/starry_sky_universe"
+        />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/image_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:tag="3"
+        android:src="@drawable/universe" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/image_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:tag="2"
+        android:src="@drawable/mountain_water" />
+
+    <androidx.constraintlayout.helper.widget.Carousel
+        android:id="@+id/carousel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:carousel_backwardTransition="@+id/backward"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:carousel_firstView="@+id/image_3"
+        app:carousel_forwardTransition="@+id/forward"
+        app:carousel_infinite="true"
+        app:carousel_nextState="@+id/next"
+        app:carousel_previousState="@+id/previous"
+        app:constraint_referenced_ids="image_1,image_2,image_3" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

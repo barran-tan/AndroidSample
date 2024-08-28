@@ -21,6 +21,7 @@ import com.barran.sample.constraint.TestConstraintLayout4Activity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
 import com.barran.sample.constraint.TestConstraintLayout3Activity
 import com.barran.sample.constraint.TestConstraintLayoutActivity
+import com.barran.sample.constraint.TestMotionCarouselActivity
 import com.barran.sample.hardware.HardwareTestAct
 import com.barran.sample.html.WebVideoActivity
 import com.barran.sample.jni.TestJniActivity
@@ -243,8 +244,11 @@ class TestActivity : TestFactory2Activity() {
                 "test_test_constraint_2_filter" to Intent(
                     this@TestActivity,
                     TestConstraintLayout4Activity::class.java
+                ),
+                "test_test_constraint_2_motion_carousel" to Intent(
+                    this@TestActivity,
+                    TestMotionCarouselActivity::class.java
                 )
-
             )
 
             recyclerView.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
