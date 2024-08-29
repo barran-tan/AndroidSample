@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:carousel_firstView="@+id/image_3"
+        app:carousel_firstView="@+id/image_2"
         app:carousel_forwardTransition="@+id/forward"
         app:carousel_infinite="true"
         app:carousel_nextState="@+id/next"
