@@ -9,20 +9,25 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.TextView
-import com.barran.sample.constraint.CarouselHelperActivity
 import androidx.core.content.PermissionChecker
 import androidx.core.view.doOnAttach
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.barran.sample.compose.TestCompostActivity
-import com.barran.sample.constraint.TestConstraintLayout4Activity
+import com.barran.sample.constraint.CarouselHelperActivity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
 import com.barran.sample.constraint.TestConstraintLayout3Activity
+import com.barran.sample.constraint.TestConstraintLayout4Activity
 import com.barran.sample.constraint.TestConstraintLayoutActivity
 import com.barran.sample.constraint.TestMotionCarouselActivity
+import com.barran.sample.constraint.carouselTypeList
 import com.barran.sample.hardware.HardwareTestAct
 import com.barran.sample.html.WebVideoActivity
 import com.barran.sample.jni.TestJniActivity
@@ -44,6 +49,7 @@ import com.barran.sample.view.TestPathActivity
 class TestActivity : TestFactory2Activity() {
 
     private lateinit var recyclerView: RecyclerView
+    private lateinit var carouselTypeSpinner: Spinner
 
     private var carouselTestType = 0
 
@@ -52,6 +58,7 @@ class TestActivity : TestFactory2Activity() {
         setContentView(R.layout.activity_main)
         Log.v(App.TAG, "TestActivity onCreate")
         recyclerView = findViewById(R.id.entry_list)
+        carouselTypeSpinner = findViewById(R.id.carousel_test_type)
         setupEntries()
         recyclerView.post {
             Log.v(App.TAG, "view post run width ${recyclerView.width} height ${recyclerView.height}")
@@ -264,12 +271,28 @@ class TestActivity : TestFactory2Activity() {
                 if (entries[it].first == "android_sample_carousel") {
                     intent.putExtra("testType", carouselTestType)
                     startActivity(intent)
-                    carouselTestType++
                 } else {
                     startActivity(intent)
                 }
             }
 
+            carouselTypeSpinner.adapter =
+                ArrayAdapter(this, android.R.layout.simple_spinner_item, carouselTypeList)
+            carouselTypeSpinner.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        carouselTestType = carouselTypeList[position]
+                    }
+
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+                        carouselTestType = 0
+                    }
+                }
         }
     }
 

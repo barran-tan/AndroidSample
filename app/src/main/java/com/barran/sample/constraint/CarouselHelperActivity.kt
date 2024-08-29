@@ -27,6 +27,9 @@ import androidx.constraintlayout.helper.widget.Carousel
 import com.barran.sample.R
 import com.google.android.material.card.MaterialCardView
 
+
+val carouselTypeList = listOf(0, 1, 2, 3, 4, 5, 6)
+
 class CarouselHelperActivity : AppCompatActivity() {
 
     private val logTag = "carousel2"
