@@ -43,10 +43,10 @@
         />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/image_3"
+        android:id="@+id/image_5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:tag="3"
+        android:tag="5"
         android:src="@drawable/universe" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -55,6 +55,20 @@
         android:layout_height="0dp"
         android:tag="2"
         android:src="@drawable/mountain_water" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/image_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:tag="4"
+        android:src="@drawable/universe" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/image_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:tag="3"
+        android:src="@drawable/universe" />
 
     <androidx.constraintlayout.helper.widget.Carousel
         android:id="@+id/carousel"
@@ -65,12 +79,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:carousel_firstView="@+id/image_2"
+        app:carousel_firstView="@+id/image_3"
         app:carousel_forwardTransition="@+id/forward"
         app:carousel_infinite="true"
         app:carousel_nextState="@+id/next"
         app:carousel_previousState="@+id/previous"
-        app:constraint_referenced_ids="image_1,image_2,image_3" />
+        app:constraint_referenced_ids="image_1,image_2,image_3,image_4,image_5" />
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
