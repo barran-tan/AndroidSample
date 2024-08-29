@@ -12,6 +12,7 @@ import android.util.Log
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.TextView
+import com.barran.sample.constraint.CarouselHelperActivity
 import androidx.core.content.PermissionChecker
 import androidx.core.view.doOnAttach
 import androidx.recyclerview.widget.RecyclerView
@@ -43,6 +44,8 @@ import com.barran.sample.view.TestPathActivity
 class TestActivity : TestFactory2Activity() {
 
     private lateinit var recyclerView: RecyclerView
+
+    private var carouselTestType = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -237,23 +240,34 @@ class TestActivity : TestFactory2Activity() {
 //                        Intent("test.compat")
 
                         Intent("test.compat").setPackage(applicationContext.packageName),
-                "test_test_constraint_2" to Intent(
+                "test_constraint_2" to Intent(
                     this@TestActivity,
                     TestConstraintLayout3Activity::class.java
                 ),
-                "test_test_constraint_2_filter" to Intent(
+                "test_constraint_2_filter" to Intent(
                     this@TestActivity,
                     TestConstraintLayout4Activity::class.java
                 ),
-                "test_test_constraint_2_motion_carousel" to Intent(
+                "test_constraint_2_motion_carousel" to Intent(
                     this@TestActivity,
                     TestMotionCarouselActivity::class.java
+                ),
+                "android_sample_carousel" to Intent(
+                    this@TestActivity,
+                    CarouselHelperActivity::class.java
                 )
             )
 
             recyclerView.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
-            recyclerView.adapter = EntryAdapter(entries.asSequence().map { it.first }.toList()){
-                startActivity(entries[it].second)
+            recyclerView.adapter = EntryAdapter(entries.asSequence().map { it.first }.toList()) {
+                val intent = entries[it].second
+                if (entries[it].first == "android_sample_carousel") {
+                    intent.putExtra("testType", carouselTestType)
+                    startActivity(intent)
+                    carouselTestType++
+                } else {
+                    startActivity(intent)
+                }
             }
 
         }
