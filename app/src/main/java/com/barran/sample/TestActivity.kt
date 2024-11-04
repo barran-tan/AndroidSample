@@ -61,13 +61,22 @@ class TestActivity : TestFactory2Activity() {
         carouselTypeSpinner = findViewById(R.id.carousel_test_type)
         setupEntries()
         recyclerView.post {
-            Log.v(App.TAG, "view post run width ${recyclerView.width} height ${recyclerView.height}")
+            Log.v(
+                App.TAG,
+                "view post run width ${recyclerView.width} height ${recyclerView.height}"
+            )
         }
         recyclerView.doOnAttach {
-            Log.v(App.TAG, "view doOnAttach width ${recyclerView.width} height ${recyclerView.height}")
+            Log.v(
+                App.TAG,
+                "view doOnAttach width ${recyclerView.width} height ${recyclerView.height}"
+            )
         }
         recyclerView.viewTreeObserver.addOnGlobalLayoutListener {
-            Log.v(App.TAG, "view global layout width ${recyclerView.width} height ${recyclerView.height}")
+            Log.v(
+                App.TAG,
+                "view global layout width ${recyclerView.width} height ${recyclerView.height}"
+            )
         }
 
         window.setFlags(
@@ -93,7 +102,10 @@ class TestActivity : TestFactory2Activity() {
 
         val id = R.drawable.delete
         val value = TestReflect.getValue(id)
-        Log.i(App.TAG, "get value of ${Integer.toHexString(id)} : $value  den=${value?.density ?: 0}")
+        Log.i(
+            App.TAG,
+            "get value of ${Integer.toHexString(id)} : $value  den=${value?.density ?: 0}"
+        )
     }
 
     override fun onResume() {
@@ -108,6 +120,9 @@ class TestActivity : TestFactory2Activity() {
 //        view doOnAttach width 0 height 0
 //        view global layout width 287 height 126
 //        view post run width 287 height 126
+
+//        InvokeTest.testInvoke()
+        InvokeTest2().innerTestDynamicProxy()
     }
 
     private fun testPermission() {
@@ -181,120 +196,120 @@ class TestActivity : TestFactory2Activity() {
         }
     }
 
-        fun setupEntries() {
+    fun setupEntries() {
 
-            // entry data
-            val entries = listOf(
-                "test_goto_tab" to Intent(this@TestActivity, TabInAppBarActivity::class.java),
-                "test_goto_fab" to Intent(
-                    this@TestActivity,
-                    FABInCoordinateLayoutActivity::class.java
-                ),
-                "test_goto_collapse_tool_bar" to Intent(
-                    this@TestActivity,
-                    CollapsingToolbarInAppBarActivity::class.java
-                ),
-                "test_swipe_dismiss" to Intent(this@TestActivity, SwipeDismissActivity::class.java),
-                "test_swipe_delete" to Intent(this@TestActivity, SwipeDeleteActivity::class.java),
-                "test_constraint_activity" to Intent(
-                    this@TestActivity,
-                    TestConstraintLayoutActivity::class.java
-                ),
-                "test_path" to Intent(this@TestActivity, TestPathActivity::class.java),
-                "test_navigation_view" to Intent(
-                    this@TestActivity,
-                    NavigationViewActivity::class.java
-                ),
-                "test_web_video" to Intent(this@TestActivity, WebVideoActivity::class.java),
-                "test_offset" to Intent(this@TestActivity, TestOffsetActivity::class.java),
-                "test_constraint_1_1" to Intent(
-                    this@TestActivity,
-                    TestConstraintLayout2Activity::class.java
-                ),
-                "test_hardware_accelerated" to Intent(
-                    this@TestActivity,
-                    HardwareTestAct::class.java
-                ),
-                "test_other" to Intent(
-                    this@TestActivity,
-                    OtherTestAct::class.java
-                ),
-                "test_photo_picker" to Intent(
-                    this@TestActivity,
-                    PhotoPickerActivity::class.java
-                ),
-                "test_compose" to Intent(
-                    this@TestActivity,
-                    TestCompostActivity::class.java
-                ),
-                "test_native" to Intent(
-                    this@TestActivity,
-                    TestJniActivity::class.java
-                ),
-                "test_compat" to
-                        // FATAL EXCEPTION: main
-                        //     Process: com.barran.androidsample, PID: 8420
-                        //     android.content.ActivityNotFoundException: No Activity found to handle Intent { act=test.compat }
-                        //     	at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:2430)
-                        //     	at android.app.Instrumentation.execStartActivity(Instrumentation.java:2005)
-                        //     	at android.app.Activity.startActivityForResult(Activity.java:5840)
-                        //     	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:728)
-                        //     	at android.app.Activity.startActivityForResult(Activity.java:5798)
-                        //     	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:709)
-                        //     	at android.app.Activity.startActivity(Activity.java:6295)
-                        //     	at android.app.Activity.startActivity(Activity.java:6262)
-                        //     	at com.barran.sample.TestActivity$ClickListener.onClick(TestActivity.kt:303)
+        // entry data
+        val entries = listOf(
+            "test_goto_tab" to Intent(this@TestActivity, TabInAppBarActivity::class.java),
+            "test_goto_fab" to Intent(
+                this@TestActivity,
+                FABInCoordinateLayoutActivity::class.java
+            ),
+            "test_goto_collapse_tool_bar" to Intent(
+                this@TestActivity,
+                CollapsingToolbarInAppBarActivity::class.java
+            ),
+            "test_swipe_dismiss" to Intent(this@TestActivity, SwipeDismissActivity::class.java),
+            "test_swipe_delete" to Intent(this@TestActivity, SwipeDeleteActivity::class.java),
+            "test_constraint_activity" to Intent(
+                this@TestActivity,
+                TestConstraintLayoutActivity::class.java
+            ),
+            "test_path" to Intent(this@TestActivity, TestPathActivity::class.java),
+            "test_navigation_view" to Intent(
+                this@TestActivity,
+                NavigationViewActivity::class.java
+            ),
+            "test_web_video" to Intent(this@TestActivity, WebVideoActivity::class.java),
+            "test_offset" to Intent(this@TestActivity, TestOffsetActivity::class.java),
+            "test_constraint_1_1" to Intent(
+                this@TestActivity,
+                TestConstraintLayout2Activity::class.java
+            ),
+            "test_hardware_accelerated" to Intent(
+                this@TestActivity,
+                HardwareTestAct::class.java
+            ),
+            "test_other" to Intent(
+                this@TestActivity,
+                OtherTestAct::class.java
+            ),
+            "test_photo_picker" to Intent(
+                this@TestActivity,
+                PhotoPickerActivity::class.java
+            ),
+            "test_compose" to Intent(
+                this@TestActivity,
+                TestCompostActivity::class.java
+            ),
+            "test_native" to Intent(
+                this@TestActivity,
+                TestJniActivity::class.java
+            ),
+            "test_compat" to
+                    // FATAL EXCEPTION: main
+                    //     Process: com.barran.androidsample, PID: 8420
+                    //     android.content.ActivityNotFoundException: No Activity found to handle Intent { act=test.compat }
+                    //     	at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:2430)
+                    //     	at android.app.Instrumentation.execStartActivity(Instrumentation.java:2005)
+                    //     	at android.app.Activity.startActivityForResult(Activity.java:5840)
+                    //     	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:728)
+                    //     	at android.app.Activity.startActivityForResult(Activity.java:5798)
+                    //     	at androidx.activity.ComponentActivity.startActivityForResult(ComponentActivity.java:709)
+                    //     	at android.app.Activity.startActivity(Activity.java:6295)
+                    //     	at android.app.Activity.startActivity(Activity.java:6262)
+                    //     	at com.barran.sample.TestActivity$ClickListener.onClick(TestActivity.kt:303)
 //                        Intent("test.compat")
 
-                        Intent("test.compat").setPackage(applicationContext.packageName),
-                "test_constraint_2" to Intent(
-                    this@TestActivity,
-                    TestConstraintLayout3Activity::class.java
-                ),
-                "test_constraint_2_filter" to Intent(
-                    this@TestActivity,
-                    TestConstraintLayout4Activity::class.java
-                ),
-                "test_constraint_2_motion_carousel" to Intent(
-                    this@TestActivity,
-                    TestMotionCarouselActivity::class.java
-                ),
-                "android_sample_carousel" to Intent(
-                    this@TestActivity,
-                    CarouselHelperActivity::class.java
-                )
+                    Intent("test.compat").setPackage(applicationContext.packageName),
+            "test_constraint_2" to Intent(
+                this@TestActivity,
+                TestConstraintLayout3Activity::class.java
+            ),
+            "test_constraint_2_filter" to Intent(
+                this@TestActivity,
+                TestConstraintLayout4Activity::class.java
+            ),
+            "test_constraint_2_motion_carousel" to Intent(
+                this@TestActivity,
+                TestMotionCarouselActivity::class.java
+            ),
+            "android_sample_carousel" to Intent(
+                this@TestActivity,
+                CarouselHelperActivity::class.java
             )
+        )
 
-            recyclerView.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
-            recyclerView.adapter = EntryAdapter(entries.asSequence().map { it.first }.toList()) {
-                val intent = entries[it].second
-                if (entries[it].first == "android_sample_carousel") {
-                    intent.putExtra("testType", carouselTestType)
-                    startActivity(intent)
-                } else {
-                    startActivity(intent)
+        recyclerView.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
+        recyclerView.adapter = EntryAdapter(entries.asSequence().map { it.first }.toList()) {
+            val intent = entries[it].second
+            if (entries[it].first == "android_sample_carousel") {
+                intent.putExtra("testType", carouselTestType)
+                startActivity(intent)
+            } else {
+                startActivity(intent)
+            }
+        }
+
+        carouselTypeSpinner.adapter =
+            ArrayAdapter(this, android.R.layout.simple_spinner_item, carouselTypeList)
+        carouselTypeSpinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    carouselTestType = carouselTypeList[position]
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    carouselTestType = 0
                 }
             }
-
-            carouselTypeSpinner.adapter =
-                ArrayAdapter(this, android.R.layout.simple_spinner_item, carouselTypeList)
-            carouselTypeSpinner.onItemSelectedListener =
-                object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(
-                        parent: AdapterView<*>?,
-                        view: View?,
-                        position: Int,
-                        id: Long
-                    ) {
-                        carouselTestType = carouselTypeList[position]
-                    }
-
-                    override fun onNothingSelected(parent: AdapterView<*>?) {
-                        carouselTestType = 0
-                    }
-                }
-        }
     }
+}
 
 private class EntryAdapter(
     private val entryList: List<String>,
@@ -319,4 +334,4 @@ private class EntryAdapter(
     }
 }
 
-private class EntryHolder(val textView:TextView):RecyclerView.ViewHolder(textView)
+private class EntryHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
