@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.barran.mylibrary"
-    compileSdk = 33
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24

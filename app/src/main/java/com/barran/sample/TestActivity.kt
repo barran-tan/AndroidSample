@@ -20,6 +20,7 @@ import androidx.core.content.PermissionChecker
 import androidx.core.view.doOnAttach
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.barran.sample.compat.Compat35Activity
 import com.barran.sample.compose.TestCompostActivity
 import com.barran.sample.constraint.CarouselHelperActivity
 import com.barran.sample.constraint.TestConstraintLayout2Activity
@@ -122,7 +123,7 @@ class TestActivity : TestFactory2Activity() {
 //        view post run width 287 height 126
 
 //        InvokeTest.testInvoke()
-        InvokeTest2().innerTestDynamicProxy()
+//        InvokeTest2().innerTestDynamicProxy()
     }
 
     private fun testPermission() {
@@ -277,7 +278,11 @@ class TestActivity : TestFactory2Activity() {
             "android_sample_carousel" to Intent(
                 this@TestActivity,
                 CarouselHelperActivity::class.java
-            )
+            ),
+            "android_compat_35" to Intent(
+                this@TestActivity,
+                Compat35Activity::class.java
+            ),
         )
 
         recyclerView.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
