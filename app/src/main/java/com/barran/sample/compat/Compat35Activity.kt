@@ -14,7 +14,7 @@ import android.widget.EditText
 
 class Compat35Activity : AppCompatActivity() {
 
-    private val TAG = "compat35"
+    private val TAG = "compat35Act"
 
     private lateinit var btn: Button
     private lateinit var edit: EditText
@@ -26,10 +26,16 @@ class Compat35Activity : AppCompatActivity() {
         btn = findViewById(R.id.show_input_dialog)
         btn.setOnClickListener {
             // adjust resize not work
+            showInputDialog()
         }
         edit = findViewById(R.id.input)
 
         monitorKeyboard()
+    }
+
+    private fun showInputDialog() {
+        val dialog = InputDialog()
+        dialog.show(supportFragmentManager, TAG)
     }
 
     private fun monitorKeyboard() {
@@ -41,20 +47,15 @@ class Compat35Activity : AppCompatActivity() {
             ): WindowInsetsCompat {
 
                 val imeVisible = insets.isVisible(WindowInsetsCompat.Type.ime())
-                val height = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom
                 val imeInset = insets.getInsets(WindowInsetsCompat.Type.ime())
                 val naviInset = insets.getInsets(WindowInsetsCompat.Type.navigationBars())
-                val both = insets.getInsets(WindowInsetsCompat.Type.ime() or WindowInsetsCompat.Type.navigationBars() or WindowInsetsCompat.Type.statusBars())
-                Log.v(TAG, "ime visible=$imeVisible height=${height} imeBottom=${imeInset.bottom} naviBottom=${naviInset.bottom} bot=${both.bottom}")
-                if (imeVisible) {
-                    (edit.layoutParams as MarginLayoutParams).bottomMargin = imeInset.bottom
-                } else {
-                    (edit.layoutParams as MarginLayoutParams).bottomMargin = naviInset.bottom
-                }
-                edit.requestLayout()
-
-                (btn.layoutParams as MarginLayoutParams).topMargin = both.top
-                btn.requestLayout()
+                val both =
+                    insets.getInsets(WindowInsetsCompat.Type.ime() or WindowInsetsCompat.Type.navigationBars() or WindowInsetsCompat.Type.statusBars())
+                Log.v(
+                    TAG,
+                    "ime visible=$imeVisible imeHeight=${imeInset.bottom} naviHeight=${naviInset.bottom} max=${both.bottom}"
+                )
+                view.setPadding(0, both.top, 0, both.bottom)
                 return insets
             }
         })
